@@ -7,11 +7,18 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <!-- Menu -->
+    <string name="title_movimientos">Movimientos</string>
+    <string name="title_otros">Otros</string>
+    <string name="menu_pagos">Home</string>
+    <string name="menu_ahorros">Gallery</string>
+    <string name="menu_inversiones">Slideshow</string>
+    <string name="menu_gastos">Gastos</string>
+    <string name="menu_ingresos">Ingresos</string>
+    <string name="menu_logros">Logros</string>
+    <string name="menu_salir">Salir</string>
 
-    <!-- login -->
+    <!-- Login -->
     <string name="titulologin">INICIO DE SESIÓN</string>
     <string name="usuarioLogin">Escribe tu usuario</string>
     <string name="contrasenaLogin">Escribe tu conrtraseña</string>

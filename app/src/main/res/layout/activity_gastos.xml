@@ -15,7 +15,7 @@
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/gastos"
+        android:hint="gastos"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         android:layout_width="343dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="@string/nomGasto"
+        android:hint="nomGasto"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,21 +53,21 @@
             android:id="@+id/opcIngresoFijo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/gastoFijos"
+            android:hint="gastoFijos"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcGastoVariado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/gastosVariados"
+            android:hint="gastosVariados"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcGastoInesperado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/gastosInesperdos"
+            android:hint="gastosInesperdos"
             android:textColorHint="@color/black" />
     </RadioGroup>
 
@@ -85,7 +85,7 @@
         android:layout_width="338dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:hint="@string/montoGasto"
+        android:hint="montoGasto"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         android:layout_width="342dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="@string/lugarGasto"
+        android:hint="lugarGasto"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
         android:id="@+id/btnRegistrarGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/registrarGasto"
+        android:hint="registrarGasto"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/regresarGasto"
+        android:hint="regresarGasto"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

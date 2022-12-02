@@ -18,7 +18,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/inversiones"
+        android:hint="inversiones"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +33,7 @@
         android:layout_width="330dp"
         android:layout_height="44dp"
         android:ems="10"
-        android:hint="@string/nombreInversionista"
+        android:hint="nombreInversionista"
         android:inputType="textPersonName"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
         android:layout_width="331dp"
         android:layout_height="46dp"
         android:ems="10"
-        android:hint="@string/objetivoInversionista"
+        android:hint="objetivoInversionista"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,21 +70,21 @@
             android:id="@+id/opcInversionAccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/inversionAccion"
+            android:hint="inversionAccion"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcInversionBonos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/inversionBonos"
+            android:hint="inversionBonos"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcInversionMercado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/inversionMercadoValores"
+            android:hint="inversionMercadoValores"
             android:textColorHint="@color/black" />
     </RadioGroup>
 

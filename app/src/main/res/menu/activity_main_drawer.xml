@@ -6,33 +6,33 @@
     <group android:checkableBehavior="single">
         <item
             android:icon="@drawable/ic_23_pago"
-            android:title="Pagos" />
+            android:title="@string/menu_pagos" />
         <item
             android:icon="@drawable/ic_21_ahorro"
-            android:title="Ahorros" />
+            android:title="@string/menu_ahorros" />
         <item
             android:icon="@drawable/ic_08_cohete"
-            android:title="Inversiones" />
+            android:title="@string/menu_inversiones" />
         <item
-            android:title="Movimientos">
+            android:title="@string/title_movimientos">
             <menu>
                 <item
                     android:icon="@drawable/ic_01_grafica_abajo"
-                    android:title="Gastos" />
+                    android:title="@string/menu_gastos" />
                 <item
                     android:icon="@drawable/ic_02_grafica_arriba"
-                    android:title="Ingresos" />
+                    android:title="@string/menu_ingresos" />
             </menu>
         </item>
         <item
-            android:title="Otros">
+            android:title="@string/title_otros">
             <menu>
                 <item
                     android:icon="@drawable/ic_10_trofeo"
-                    android:title="Logros" />
+                    android:title="@string/menu_logros" />
                 <item
                     android:icon="@drawable/ic_41_logout"
-                    android:title="Salir" />
+                    android:title="@string/menu_salir" />
             </menu>
         </item>
     </group>

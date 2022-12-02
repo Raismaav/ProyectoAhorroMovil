@@ -15,7 +15,7 @@
         android:id="@+id/txtTituloIngreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/Ingresos"
+        android:hint="Ingresos"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         android:layout_width="343dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="@string/nomIngreso"
+        android:hint="nomIngreso"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,21 +53,21 @@
             android:id="@+id/opcIngresoFijo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/ingresoFijos"
+            android:hint="ingresoFijos"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcIngresoVariado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/ingresoVariados"
+            android:hint="ingresoVariados"
             android:textColorHint="@color/black" />
 
         <RadioButton
             android:id="@+id/opcIngresoInesperado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/ingresoInesperdos"
+            android:hint="ingresoInesperdos"
             android:textColorHint="@color/black" />
     </RadioGroup>
 
@@ -85,7 +85,7 @@
         android:layout_width="338dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:hint="@string/montoIngreso"
+        android:hint="montoIngreso"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         android:layout_width="342dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="@string/lugarIngreso"
+        android:hint="lugarIngreso"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
         android:id="@+id/btnRegistrarIngreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/registrarIngreso"
+        android:hint="registrarIngreso"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         android:id="@+id/btnRegresarIngreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/regresarGasto"
+        android:hint="regresarGasto"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
