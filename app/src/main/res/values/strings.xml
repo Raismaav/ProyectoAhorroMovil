@@ -10,4 +10,58 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    //AHORROS
+    <string name="Ahorros">AHORROS</string>
+    <string name="nombreBeneficiario">Escribe el nombre del beneficiario</string>
+    <string name="AhorroObjetivo">Ahorro para un objetivo</string>
+    <string name="AhorroEmergencia">Ahorro de emergencia</string>
+    <string name="AhorroHipotecario">Ahorro hipotecario</string>
+    <string name="montoAhorro">Escribe el monto del ahorro</string>
+    <string name="cuentaDestino">Escribe la cuenta destino del ahorro</string>
+    <string name="registroAhorro">REGISTRAR AHORRO</string>
+    <string name="regresarAhorro">REGRESAR</string>
+
+    //INVERSION
+    <string name="inversiones">INVERSIONES</string>
+    <string name="nombreInversionista">Escribe el nombre del inversionista</string>
+    <string name="objetivoInversionista">Escribe el objetivo del inversión</string>
+    <string name="inversionAccion">Inversión de acciones</string>
+    <string name="inversionBonos">Inversión de bonos</string>
+    <string name="inversionMercadoValores">Inversión del mercado de valores</string>
+    <string name="nivelRiesgo">NIVEL DE RIESGO DE INVERSIÓN</string>
+    <string name="plazoInversion">PLAZO DE INVERSIÓN</string>
+    <string name="montoInversion">Escribe el monto de inversión</string>
+    <string name="bajo">Bajo</string>
+    <string name="medio">Medio</string>
+    <string name="alto">Alto</string>
+    <string name="cortoPlazo">Corto</string>
+    <string name="medianoPlazo">Mediano</string>
+    <string name="largoPlazo">Largo</string>
+    <string name="registrarInversion">REGISTRAR INVERSIÓN</string>
+    <string name="regresarInversion">REGRESAR</string>
+
+
+    //GASTOS
+    <string name="gastos">GASTOS</string>
+    <string name="nomGasto">Escribe el nombre del gasto</string>
+    <string name="montoGasto">Escribe el monto del gasto</string>
+    <string name="lugarGasto">Escribe el lugar del gasto</string>
+    <string name="gastoFijos">Gastos Fijos</string>
+    <string name="gastosVariados">Gastos Variados</string>
+    <string name="gastosInesperdos">Gastos Inesperados</string>
+    <string name="registrarGasto">REGISTRAR GASTOS</string>
+    <string name="regresarGasto">REGRESAR</string>
+
+
+    //INGRESOS
+    <string name="Ingresos">INGRESOS</string>
+    <string name="nomIngreso">Escribe el nombre del ingreso</string>
+    <string name="montoIngreso">Escribe el monto del ingreso</string>
+    <string name="lugarIngreso">Escribe el lugar del ingreso</string>
+    <string name="ingresoFijos">Ingresos Fijos</string>
+    <string name="ingresoVariados">Ingresos Variados</string>
+    <string name="ingresoInesperdos">Ingresos Inesperados</string>
+    <string name="registrarIngreso">REGISTRAR INGRESO</string>
+    <string name="regresarIngreso">REGRESAR</string>
 </resources>
