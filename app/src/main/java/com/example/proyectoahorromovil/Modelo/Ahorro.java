@@ -1,4 +1,4 @@
-package com.example.proyectoahorromovil;
+package com.example.proyectoahorromovil.Modelo;
 
 public class Ahorro {
     String NombreBeneficiario, TipoAhorro, FechaAhorro, CuentaAhorro;
