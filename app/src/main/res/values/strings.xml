@@ -33,5 +33,5 @@
     <string name="nombreUsuario">Escribe tu nombre de usuario</string>
     <string name="contrasenaUsuario">Escribe tu contraseña</string>
     <string name="registrar">REGISTRARSE</string>
-    <string name="regresar">Regresar</string>
+    <string name="regresar">REGRESAR</string>
 </resources>
