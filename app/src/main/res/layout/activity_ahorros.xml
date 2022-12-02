@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ahorros">
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/app_bar_main"
+        android:layout_width="411dp"
+        android:layout_height="726dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Ahorros"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include3"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <EditText
+        android:id="@+id/txtNomBeneficiario"
+        android:layout_width="330dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="@string/nombreBeneficiario"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <RadioGroup
+        android:layout_width="127dp"
+        android:layout_height="191dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442">
+
+        <RadioButton
+            android:id="@+id/ckAhorroObjetivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/AhorroObjetivo"
+            android:textColorHint="@color/black" />
+
+        <RadioButton
+            android:id="@+id/ckAhorroEmergencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/AhorroEmergencia"
+            android:textColorHint="@color/black" />
+
+        <RadioButton
+            android:id="@+id/ckAhorroHipotecario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/AhorroHipotecario"
+            android:textColorHint="@color/black" />
+    </RadioGroup>
+
+    <CalendarView
+        android:id="@+id/calendarAhorro"
+        android:layout_width="215dp"
+        android:layout_height="293dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <EditText
+        android:id="@+id/txtMontoAhorro"
+        android:layout_width="325dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="@string/montoAhorro"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/include3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751" />
+
+    <EditText
+        android:id="@+id/txtCuentaDestino"
+        android:layout_width="334dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/cuentaDestino"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/include3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.838" />
+
+    <Button
+        android:id="@+id/btnRegistrarAhorro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/registroAhorro"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
+
+    <Button
+        android:id="@+id/btnRegresarAhorro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/regresarAhorro"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

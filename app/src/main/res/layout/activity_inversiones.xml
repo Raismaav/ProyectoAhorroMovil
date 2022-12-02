@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inversiones">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/app_bar_main"
+        android:layout_width="412dp"
+        android:layout_height="731dp"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/inversiones"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089" />
+
+    <EditText
+        android:id="@+id/txtNombreInversionista"
+        android:layout_width="330dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/nombreInversionista"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <EditText
+        android:id="@+id/txtObjetivoInversionista"
+        android:layout_width="331dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="@string/objetivoInversionista"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.227" />
+
+    <RadioGroup
+        android:layout_width="170dp"
+        android:layout_height="169dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441">
+
+        <RadioButton
+            android:id="@+id/opcInversionAccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/inversionAccion"
+            android:textColorHint="@color/black" />
+
+        <RadioButton
+            android:id="@+id/opcInversionBonos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/inversionBonos"
+            android:textColorHint="@color/black" />
+
+        <RadioButton
+            android:id="@+id/opcInversionMercado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/inversionMercadoValores"
+            android:textColorHint="@color/black" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtRiesgos"
+        android:layout_width="139dp"
+        android:layout_height="33dp"
+        android:hint="@string/nivelRiesgo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323" />
+
+    <CheckBox
+        android:id="@+id/ckBajo"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/bajo"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/ckMedio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRiesgos" />
+
+    <CheckBox
+        android:id="@+id/ckMedio"
+        android:layout_width="138dp"
+        android:layout_height="47dp"
+        android:hint="@string/medio"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/ckAlto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ckBajo" />
+
+    <CheckBox
+        android:id="@+id/ckAlto"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="21dp"
+        android:hint="@string/alto"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txtPlazos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ckMedio" />
+
+    <CheckBox
+        android:id="@+id/ckCorto"
+        android:layout_width="112dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="13dp"
+        android:hint="@string/cortoPlazo"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/ckMediano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlazos" />
+
+    <CheckBox
+        android:id="@+id/ckMediano"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+        android:hint="@string/medianoPlazo"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/ckLargo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ckCorto" />
+
+    <CheckBox
+        android:id="@+id/ckLargo"
+        android:layout_width="116dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="19dp"
+        android:hint="@string/largoPlazo"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txtMontoInversion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ckMediano" />
+
+    <EditText
+        android:id="@+id/txtMontoInversion"
+        android:layout_width="349dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/montoInversion"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864" />
+
+    <Button
+        android:id="@+id/btnRegistrarInversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/registrarInversion"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+        android:id="@+id/btnRegresarInver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/regresarInversion"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <TextView
+        android:id="@+id/txtPlazos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/plazoInversion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+</androidx.constraintlayout.widget.ConstraintLayout>
