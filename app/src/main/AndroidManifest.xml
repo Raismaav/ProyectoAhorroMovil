@@ -13,8 +13,10 @@
         android:theme="@style/Theme.ProyectoAhorroMovil"
         tools:targetApi="31">
         <activity
-            android:name=".CargaActivity"
-            android:exported="false">
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoAhorroMovil.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -34,7 +36,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".CargaActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProyectoAhorroMovil.NoActionBar">

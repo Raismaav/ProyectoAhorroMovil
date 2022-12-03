@@ -19,14 +19,14 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        name = findViewById(R.id.txtNombre);
-        lastname = findViewById(R.id.txtApellido);
-        age = findViewById(R.id.txtEdad);
-        username = findViewById(R.id.txtNombreUsuario);
-        passwdUser = findViewById(R.id.txtConstrasenaUusario);
-        sex = findViewById(R.id.spSexo);
-        registryUser = findViewById(R.id.btnRegistrarUsuario);
-        back = findViewById(R.id.btnRegresarLogin);
+        name = findViewById(R.id.edt_nombre_registro);
+        lastname = findViewById(R.id.edt_apellido_registro);
+        age = findViewById(R.id.edt_edad_registro);
+        username = findViewById(R.id.edt_usuario_registro);
+        passwdUser = findViewById(R.id.edt_contrasenna_registro);
+        sex = findViewById(R.id.spn_sexo_registro);
+        registryUser = findViewById(R.id.btn_registro_usuario);
+        back = findViewById(R.id.btn_regresar_login);
     }
 
     public void regresarLogin(View view) {

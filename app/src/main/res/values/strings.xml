@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ahorro Móvil</string>
+    <string name="app_name">Ahorromóvil</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -19,26 +19,28 @@
     <string name="menu_salir">Salir</string>
 
     <!-- Login -->
-    <string name="titulologin">Inicio de sesión</string>
-    <string name="usuarioLogin">Escribe tu usuario</string>
-    <string name="contrasenaLogin">Escribe tu conrtraseña</string>
-    <string name="guardarDatos">Guardar datos de inicio de sesión</string>
-    <string name="iniciar">INICIAR</string>
-    <string name="cuentaNueva">¿No tienes una cuenta?</string>
-    <string name="registrarse">¡REGISTRATE!</string>
+    <string name="titulo_login">Inicio de sesión</string>
+    <string name="edt_usuario_login">Escribe tu usuario</string>
+    <string name="edt_contrasenna_login">Escribe tu conrtraseña</string>
+    <string name="chb_guardar">Guardar datos de inicio de sesión</string>
+    <string name="btn_ingresar">INICIAR</string>
+    <string name="txv_no_cuenta">¿No tienes una cuenta?</string>
+    <string name="btn_registrar_login">¡REGISTRATE!</string>
 
     <!-- Registro -->
-    <string name="tituloRegistro">¡Regístrate!</string>
-    <string name="nombre">Escribe tu nombre</string>
-    <string name="apellido">Escribe tu apellido</string>
-    <string name="edad">Escribe tu edad</string>
-    <string-array name="sexo">
+    <string name="titulo_registro">¡Regístrate!</string>
+    <string name="edt_nombre_registro">Escribe tu nombre</string>
+    <string name="edt_apellido_registro">Escribe tu apellido</string>
+    <string name="edt_edad_registro">Escribe tu edad</string>
+    <string-array name="spn_sexo_registro">
         <item>Seleccione...</item>
         <item>Femenino</item>
         <item>Masculino</item>
     </string-array>
-    <string name="nombreUsuario">Escribe tu nombre de usuario</string>
-    <string name="contrasenaUsuario">Escribe tu contraseña</string>
-    <string name="registrar">Registrarse</string>
-    <string name="regresar">Regresar</string>
+    <string name="edt_usuario_registro">Escribe tu nombre de usuario</string>
+    <string name="edt_contrasenna_registro">Escribe tu contraseña</string>
+    <string name="btn_registrar">Registrarse</string>
+    <string name="btn_regresar">Regresar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

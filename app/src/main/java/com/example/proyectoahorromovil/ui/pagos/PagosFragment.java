@@ -18,8 +18,8 @@ public class PagosFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        pagoViewModel pagoViewModel =
-                new ViewModelProvider(this).get(pagoViewModel.class);
+        PagoViewModel pagoViewModel =
+                new ViewModelProvider(this).get(PagoViewModel.class);
 
         binding = FragmentPagosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

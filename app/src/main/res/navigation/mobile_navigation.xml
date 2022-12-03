@@ -22,4 +22,17 @@
         android:name="com.example.proyectoahorromovil.ui.inversiones.InversionesFragment"
         android:label="@string/menu_inversiones"
         tools:layout="@layout/fragment_inversiones" />
+
+    <fragment
+        android:id="@+id/nav_gastos"
+        android:name="com.example.proyectoahorromovil.ui.gastos.GastosFragment"
+        android:label="@string/menu_gastos"
+        tools:layout="@layout/fragment_gastos" />
+
+    <fragment
+        android:id="@+id/nav_ingresos"
+        android:name="com.example.proyectoahorromovil.ui.ingresos.IngresosFragment"
+        android:label="@string/menu_ingresos"
+        tools:layout="@layout/fragment_ingresos" />
+
 </navigation>
