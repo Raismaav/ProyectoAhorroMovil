@@ -41,28 +41,35 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void registrarUsuario(View view) {
-        if(!name.getText().equals("") && !lastname.getText().equals("") && !age.getText().equals("") && !sex.getSelectedItem().equals("Selecciona") && !username.getText().equals("") && !passwdUser.getText().equals("")) {
-            try {
-                OutputStreamWriter createFileInformationUser = new OutputStreamWriter(openFileOutput(username.getText().toString() + "_credentials.txt", Activity.MODE_PRIVATE));
-
-                String select = sex.getSelectedItem().toString();
-                String sexSelected = "";
-                if (select.equals("Femenino")) {
-                    sexSelected = "Femenino";
-                } else {
-                    sexSelected = "Masculino";
-                }
-
-                createFileInformationUser.write(name.getText().toString() + "\n" + lastname.getText().toString() + "\n" + age.getText().toString() + "\n" + sexSelected + "\n" + username.getText().toString() + "\n" + passwdUser.getText().toString());
-                createFileInformationUser.flush();
-                createFileInformationUser.close();
-                limpiar();
-                Toast.makeText(this, "La cuenta fue creada correctamente.", Toast.LENGTH_SHORT).show();
-            } catch (IOException ex) {
-                Toast.makeText(this, "La cuenta no pudo crearce de manera correcta.", Toast.LENGTH_SHORT).show();
-            }
+        String files[] = fileList();
+        if(archivoExiste(files, username.getText().toString() + "_credentials.txt")) {
+            Toast.makeText(this, "Ya existe ese nombre de usuario.", Toast.LENGTH_SHORT).show();
+            limpiar();
         } else {
-            Toast.makeText(this, "Revise los campos, alguno se encuentra vacío", Toast.LENGTH_SHORT).show();
+            if(!name.getText().toString().equals("") && !lastname.getText().toString().equals("") && !age.getText().toString().equals("") && !sex.getSelectedItem().toString().equals("Selecciona") && !username.getText().toString().equals("") && !passwdUser.getText().toString().equals("")) {
+                try {
+                    OutputStreamWriter createFileInformationUser = new OutputStreamWriter(openFileOutput(username.getText().toString() + "_credentials.txt", Activity.MODE_PRIVATE));
+                    String select = sex.getSelectedItem().toString();
+                    String sexSelected = "";
+                    if (select.equals("Femenino")) {
+                        sexSelected = "Femenino";
+                    } else {
+                        sexSelected = "Masculino";
+                    }
+                    createFileInformationUser.write(name.getText().toString() + "\n" + lastname.getText().toString() + "\n" + age.getText().toString() + "\n" + sexSelected + "\n" + username.getText().toString() + "\n" + passwdUser.getText().toString());
+                    createFileInformationUser.flush();
+                    createFileInformationUser.close();
+                    Toast.makeText(this, "La cuenta fue creada correctamente.", Toast.LENGTH_LONG).show();
+                    Intent loadLogin = new Intent(RegistroActivity.this, LoginActivity.class);
+                    startActivity(loadLogin);
+                    finish();
+                } catch (IOException ex) {
+                    limpiar();
+                    Toast.makeText(this, "La cuenta no pudo crearce de manera correcta.", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Revise los campos, alguno se encuentra vacío", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -72,6 +79,13 @@ public class RegistroActivity extends AppCompatActivity {
         age.setText("");
         username.setText("");
         passwdUser.setText("");
+        sex.setSelection(0);
     }
 
+    private boolean archivoExiste(String files[], String nameFile) {
+        for(int i = 0; i < files.length; i++)
+            if(nameFile.equals(files[i]))
+                return true;
+        return false;
+    }
 }

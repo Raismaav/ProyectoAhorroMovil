@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void ingresarSitio(View view) {
-        if (!user.getText().equals("") && !passwd.getText().equals("")) {
+        if (!user.getText().toString().equals("") && !passwd.getText().toString().equals("")) {
             String files[] = fileList();
             if(archivoExiste(files, user.getText().toString() + "_credentials.txt")) {
                 if(save.isChecked()) {
@@ -59,20 +59,41 @@ public class LoginActivity extends AppCompatActivity {
                             userClass.setUsername(lineOfUsername);
                             String lineOfPasswd = br.readLine();
                             userClass.setPasswd(lineOfPasswd);
-                            System.out.println(lineOfName + "\n" + lineOfLastname + "\n" + lineOfAge + "\n" + lineOfSex + "\n" + lineOfUsername + "\n" + lineOfPasswd + "\n");
                         br.close();
                         contentFiles.close();
                         guardarPreferencias(userClass);
-                        Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(loadMain);
-                        finish();
+                            if(passwd.getText().toString().equals(lineOfPasswd)) {
+                                Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(loadMain);
+                                finish();
+                            } else {
+                                Toast.makeText(this, "La contraseña es incorrecta.", Toast.LENGTH_SHORT).show();
+                            }
                     } catch (IOException ex) {
                         Toast.makeText(this, "No se pudieron guardar las preferencias del usuario.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(loadMain);
-                    finish();
+                    try {
+                        InputStreamReader contentFiles = new InputStreamReader(openFileInput(user.getText().toString() + "_credentials.txt"));
+                        BufferedReader br = new BufferedReader(contentFiles);
+                        String lineOfName = br.readLine();
+                        String lineOfLastname = br.readLine();
+                        String lineOfAge = br.readLine();
+                        String lineOfSex = br.readLine();
+                        String lineOfUsername = br.readLine();
+                        String lineOfPasswd = br.readLine();
+                        br.close();
+                        contentFiles.close();
+                            if(passwd.getText().toString().equals(lineOfPasswd)) {
+                                Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(loadMain);
+                                finish();
+                            } else {
+                                Toast.makeText(this, "La contraseña es incorrecta.", Toast.LENGTH_SHORT).show();
+                            }
+                    } catch (IOException ex) {
+                        Toast.makeText(this, "Error al leer el archivo.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             } else {
                 Toast.makeText(this, "El usuario no existe.", Toast.LENGTH_SHORT).show();

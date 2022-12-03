@@ -8,14 +8,17 @@
             android:id="@+id/nav_pagos"
             android:icon="@drawable/ic_23_pago"
             android:title="@string/menu_pagos" />
+
         <item
             android:id="@+id/nav_ahorros"
             android:icon="@drawable/ic_21_ahorro"
             android:title="@string/menu_ahorros" />
+
         <item
             android:id="@+id/nav_inversiones"
             android:icon="@drawable/ic_08_cohete"
             android:title="@string/menu_inversiones" />
+
         <item
             android:title="@string/title_movimientos">
             <menu>
@@ -23,19 +26,23 @@
                     android:id="@+id/nav_gastos"
                     android:icon="@drawable/ic_01_grafica_abajo"
                     android:title="@string/menu_gastos" />
+
                 <item
                     android:id="@+id/nav_ingresos"
                     android:icon="@drawable/ic_02_grafica_arriba"
                     android:title="@string/menu_ingresos" />
             </menu>
         </item>
+
         <item
             android:title="@string/title_otros">
             <menu>
                 <item
                     android:icon="@drawable/ic_10_trofeo"
                     android:title="@string/menu_logros" />
+
                 <item
+                    android:id="@+id/nav_login"
                     android:icon="@drawable/ic_41_logout"
                     android:title="@string/menu_salir" />
             </menu>
