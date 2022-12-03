@@ -1,63 +1,45 @@
 package com.example.proyectoahorromovil;
 
 public class Usuario {
-    String Nombre, Apellido, Sexo,Usuario, Contraseña;
-    int Edad;
+    String name, lastname, sex, username, passwd;
+    int age;
 
-    public Usuario(String nombre, String apellido, String sexo, String usuario, String contraseña, int edad) {
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.Sexo = sexo;
-        this.Usuario = usuario;
-        this.Contraseña = contraseña;
-        this.Edad = edad;
+    Usuario() {}
+
+    public String getName() {
+        return name;
     }
-
-    public String getNombre() {
-        return Nombre;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public String getLastname() {
+        return lastname;
     }
-
-    public String getApellido() {
-        return Apellido;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-
-    public void setApellido(String apellido) {
-        Apellido = apellido;
+    public String getSex() {
+        return sex;
     }
-
-    public String getSexo() {
-        return Sexo;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
-
-    public void setSexo(String sexo) {
-        Sexo = sexo;
+    public String getUsername() {
+        return username;
     }
-
-    public String getUsuario() {
-        return Usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
-    public void setUsuario(String usuario) {
-        Usuario = usuario;
+    public String getPasswd() {
+        return passwd;
     }
-
-    public String getContraseña() {
-        return Contraseña;
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
-
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
+    public int getAge() {
+        return age;
     }
-
-    public int getEdad() {
-        return Edad;
-    }
-
-    public void setEdad(int edad) {
-        Edad = edad;
+    public void setAge(int age) {
+        this.age = age;
     }
 }

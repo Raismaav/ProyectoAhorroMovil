@@ -11,7 +11,8 @@ public class CargaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carga);
-        Intent cargarLogin = new Intent(CargaActivity.this, LoginActivity.class);
-        startActivity(cargarLogin);
+        Intent loadLogin = new Intent(CargaActivity.this, LoginActivity.class);
+        startActivity(loadLogin);
+        finish();
     }
 }
