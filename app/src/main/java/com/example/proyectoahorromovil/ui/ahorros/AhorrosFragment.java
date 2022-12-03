@@ -1,4 +1,4 @@
-package com.example.proyectoahorromovil.ui.gallery;
+package com.example.proyectoahorromovil.ui.ahorros;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.proyectoahorromovil.databinding.FragmentGalleryBinding;
+import com.example.proyectoahorromovil.databinding.FragmentAhorrosBinding;
 
-public class GalleryFragment extends Fragment {
+public class AhorrosFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentAhorrosBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        AhorrosViewModel galleryViewModel =
+                new ViewModelProvider(this).get(AhorrosViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentAhorrosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textGallery;

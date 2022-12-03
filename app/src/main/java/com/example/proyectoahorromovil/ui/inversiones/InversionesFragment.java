@@ -1,4 +1,4 @@
-package com.example.proyectoahorromovil.ui.slideshow;
+package com.example.proyectoahorromovil.ui.inversiones;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.proyectoahorromovil.databinding.FragmentSlideshowBinding;
+import com.example.proyectoahorromovil.databinding.FragmentInversionesBinding;
 
-public class SlideshowFragment extends Fragment {
+public class InversionesFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentInversionesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        InversionesViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(InversionesViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentInversionesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;

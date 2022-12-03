@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_pagos">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.proyectoahorromovil.ui.home.HomeFragment"
-        android:label="@string/menu_pagos" />
+        android:id="@+id/nav_pagos"
+        android:name="com.example.proyectoahorromovil.ui.pagos.PagosFragment"
+        android:label="@string/menu_pagos"
+        tools:layout="@layout/fragment_pagos" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyectoahorromovil.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_ahorros"
+        android:name="com.example.proyectoahorromovil.ui.ahorros.AhorrosFragment"
         android:label="@string/menu_ahorros"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_ahorros" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.proyectoahorromovil.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_inversiones"
+        android:name="com.example.proyectoahorromovil.ui.inversiones.InversionesFragment"
         android:label="@string/menu_inversiones"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_inversiones" />
 </navigation>
