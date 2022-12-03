@@ -4,10 +4,11 @@
     android:shape="rectangle">
 
     <corners
+        android:topRightRadius="32dp"
         android:bottomRightRadius="32dp"
         />
     <solid
-        android:color="@color/white"
+        android:color="@color/orange_100"
         />
 
 </shape>
