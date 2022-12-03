@@ -5,113 +5,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical">
-
-
-    <include
-        android:id="@+id/idToolbarLogin"
-        layout="@layout/toolbar"
-        android:layout_width="413dp"
-        android:layout_height="49dp" />
+    android:background="@color/orange_100"
+    tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/txtTitulo"
+        android:id="@+id/txv_titulo_login"
         android:layout_width="0dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/titulologin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/titulo_login"
         android:textAlignment="center"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idToolbarLogin" />
-
-    <ImageView
-        android:id="@+id/imgAhorrito"
-        android:layout_width="413dp"
-        android:layout_height="240dp"
-        android:src="@mipmap/ahorrito"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
-
-    <EditText
-        android:id="@+id/txtUsuario"
-        android:layout_width="381dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/usuarioLogin"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAhorrito" />
-
-    <EditText
-        android:id="@+id/txtContrasena"
-        android:layout_width="378dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/contrasenaLogin"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
-
-    <CheckBox
-        android:id="@+id/chGuardar"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/guardarDatos"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasena" />
-
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="378dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/iniciar"
-        android:textSize="19dp"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chGuardar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtAviso"
-        android:layout_width="398dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/cuentaNueva"
-        android:textAlignment="center"
-        android:textSize="20dp"
+    <ImageView
+        android:id="@+id/imv_ahorrito"
+        android:layout_width="wrap_content"
+        android:layout_height="256dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@mipmap/ahorrito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_titulo_login" />
+
+    <EditText
+        android:id="@+id/edt_usuario_login"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/edt_usuario_login"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_ahorrito" />
+
+    <EditText
+        android:id="@+id/edt_contrasenna_login"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/edt_contrasenna_login"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_usuario_login" />
+
+    <CheckBox
+        android:id="@+id/chb_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/chb_guardar"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_contrasenna_login" />
 
     <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="374dp"
-        android:layout_height="53dp"
+        android:id="@+id/btn_ingresar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/btn_ingresar"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chb_guardar" />
+
+    <TextView
+        android:id="@+id/txv_no_cuenta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txv_no_cuenta"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ingresar" />
+
+    <Button
+        android:id="@+id/btn_registrar_login"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:onClick="mandarActivityRegistro"
-        android:text="@string/registrarse"
-        android:textSize="18dp"
+        android:text="@string/btn_registrar_login"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAviso" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_no_cuenta" />
 </androidx.constraintlayout.widget.ConstraintLayout>

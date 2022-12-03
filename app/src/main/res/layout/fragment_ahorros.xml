@@ -5,136 +5,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange_100"
-    tools:context=".RegistroActivity">
+    tools:context=".fragments.AhorrosFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/txv_titulo_registro"
+            android:id="@+id/txv_titulo_ahorros"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/titulo_registro"
+            android:text="AHORROS"
             android:textAlignment="center"
             android:textSize="32dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/idToolbarLogin" />
 
         <EditText
-            android:id="@+id/edt_nombre_registro"
+            android:id="@+id/edt_nombre_ahorro"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="@string/edt_nombre_registro"
+            android:hint="Escribe el nombre del beneficiario"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txv_titulo_registro" />
+            app:layout_constraintTop_toBottomOf="@+id/txv_titulo_ahorros" />
+
+        <RadioGroup
+            android:id="@+id/grp_ahorro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nombre_ahorro">
+
+            <RadioButton
+                android:id="@+id/rb_objetivo_ahorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ahorro para un objetivo" />
+
+            <RadioButton
+                android:id="@+id/rb_emergencia_ahorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ahorro de emergencia" />
+
+            <RadioButton
+                android:id="@+id/rb_hipoteca_ahorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ahorro hipotecario" />
+        </RadioGroup>
+
+        <CalendarView
+            android:id="@+id/clv_fecha_ahorro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grp_ahorro" />
 
         <EditText
-            android:id="@+id/edt_apellido_registro"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="@string/edt_apellido_registro"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_nombre_registro" />
-
-        <EditText
-            android:id="@+id/edt_edad_registro"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="@string/edt_edad_registro"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_apellido_registro" />
-
-        <Spinner
-            android:id="@+id/spn_sexo_registro"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/app_name"
-            android:entries="@array/spn_sexo_registro"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_edad_registro" />
-
-        <EditText
-            android:id="@+id/edt_usuario_registro"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="@string/edt_usuario_registro"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spn_sexo_registro" />
-
-        <EditText
-            android:id="@+id/edt_contrasenna_registro"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="@string/edt_contrasenna_registro"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_usuario_registro" />
-
-        <Button
-            android:id="@+id/btn_registro_usuario"
+            android:id="@+id/edt_monto_ahorro"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/btn_registrar"
-            android:textSize="16dp"
+            android:ems="10"
+            android:hint="Escribe el monto del ahorro"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_contrasenna_registro" />
+            app:layout_constraintTop_toBottomOf="@+id/clv_fecha_ahorro" />
+
+        <EditText
+            android:id="@+id/edt_cuenta_ahorro"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Escribe la cuenta destino del ahorro"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_monto_ahorro" />
+
+        <include
+            android:id="@+id/idToolbarLogin"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/btn_regresar_login"
+            android:id="@+id/btn_registrar_inversion"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="REGISTRAR AHORRO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_cuenta_ahorro" />
+
+        <Button
+            android:id="@+id/btn_regresar_main"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:onClick="regresarLogin"
-            android:text="@string/btn_regresar"
-            android:textSize="16dp"
+            android:text="REGRESAR"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_registro_usuario" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_registrar_inversion" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -148,7 +153,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_regresar_login">
+            app:layout_constraintTop_toBottomOf="@+id/btn_regresar_main">
 
             <ImageView
                 android:layout_width="64dp"

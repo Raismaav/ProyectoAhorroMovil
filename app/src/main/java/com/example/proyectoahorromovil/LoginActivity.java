@@ -25,11 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        user = findViewById(R.id.txtUsuario);
-        passwd = findViewById(R.id.txtContrasena);
-        login = findViewById(R.id.btnIngresar);
-        registry = findViewById(R.id.btnRegistrar);
-        save = findViewById(R.id.chGuardar);
+        user = findViewById(R.id.edt_usuario_login);
+        passwd = findViewById(R.id.edt_contrasenna_login);
+        login = findViewById(R.id.btn_ingresar);
+        registry = findViewById(R.id.btn_registrar_login);
+        save = findViewById(R.id.chb_guardar);
     }
 
     public void mandarActivityRegistro(View view) {
