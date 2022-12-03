@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/txv_titulo"
+            android:id="@+id/txv_titulo_registro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txv_titulo" />
+            app:layout_constraintTop_toBottomOf="@+id/txv_titulo_registro" />
 
         <EditText
             android:id="@+id/edt_apellido_registro"
