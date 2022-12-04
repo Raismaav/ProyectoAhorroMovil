@@ -4,12 +4,8 @@ public class Ahorro {
     String NombreBeneficiario, TipoAhorro, FechaAhorro, CuentaAhorro;
     int MontoAhorro;
 
-    public Ahorro(String nombreBeneficiario, String tipoAhorro, String fechaAhorro, String cuentaAhorro, int montoAhorro) {
-        this.NombreBeneficiario = nombreBeneficiario;
-        this.TipoAhorro = tipoAhorro;
-        this.FechaAhorro = fechaAhorro;
-        this.CuentaAhorro = cuentaAhorro;
-        this.MontoAhorro = montoAhorro;
+    public Ahorro() {
+
     }
 
     public String getNombreBeneficiario() {
