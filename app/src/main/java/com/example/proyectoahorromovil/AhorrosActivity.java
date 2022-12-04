@@ -19,18 +19,19 @@ public class AhorrosActivity extends AppCompatActivity {
 
     EditText contenido;
     Button regresar;
+    private String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ahorros);
+        usuario = getIntent().getStringExtra("usuario");
         contenido = findViewById(R.id.txtMostrarAhorros);
         regresar = findViewById(R.id.btnRegresarAhorros);
-
         String files[] = fileList();
         if(archivoExiste(files, "_savings.txt")) {
             try {
-                InputStreamReader contentFile = new InputStreamReader(openFileInput("_savings.txt"));
+                InputStreamReader contentFile = new InputStreamReader(openFileInput(usuario + "_savings.txt"));
                 BufferedReader br = new BufferedReader(contentFile);
                 String firstLine = br.readLine();
                 String allFile = "";
@@ -58,6 +59,7 @@ public class AhorrosActivity extends AppCompatActivity {
 
     public void regresar(View view) {
         Intent loadMain = new Intent(AhorrosActivity.this, MainActivity.class);
+        loadMain.putExtra("usuario", usuario);
         startActivity(loadMain);
     }
 }

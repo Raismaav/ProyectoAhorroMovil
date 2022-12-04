@@ -27,6 +27,7 @@ public class AhorrosFragment extends Fragment {
     RadioButton ahorroObjetivo, ahorroEmergencia, ahorroHipotecario;
     Button registrarAhorro;
     CalendarView fechaAhorro;
+    private String usuario;
     private Ahorro objeto;
 
     public AhorrosFragment() { /* Constructor vacío */ }
@@ -34,6 +35,7 @@ public class AhorrosFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @Override
@@ -95,7 +97,7 @@ public class AhorrosFragment extends Fragment {
 
     public void guardarArchivo() {
         try {
-            OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
+            OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_savings.txt", Activity.MODE_PRIVATE));
             saves.write(objeto.getNombreBeneficiario() + "\n" + objeto.getTipoAhorro() + "\n" + objeto.getFechaAhorro() + "\n" + objeto.getMontoAhorro() + "\n" + objeto.getCuentaAhorro());
             saves.flush();
             saves.close();

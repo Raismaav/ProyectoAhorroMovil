@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                         guardarPreferencias(userClass);
                             if(passwd.getText().toString().equals(lineOfPasswd)) {
                                 Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
+                                loadMain.putExtra("usuario", usuario);
                                 startActivity(loadMain);
                                 finish();
                             } else {

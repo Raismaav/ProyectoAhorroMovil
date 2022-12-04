@@ -50,7 +50,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:onClick="regresar"
             android:text="@string/btn_regresar"
             android:onClick="regresar"
             app:layout_constraintEnd_toEndOf="parent"

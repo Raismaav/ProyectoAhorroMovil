@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-
     private TextView txv_usuario_header;
     private String usuario;
 
