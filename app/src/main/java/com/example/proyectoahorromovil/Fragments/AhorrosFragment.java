@@ -69,7 +69,8 @@ public class AhorrosFragment extends Fragment {
 
     }
 
-    public void RegistrarAhorro(View view) {
+   public void RegistrarAhorro(View view) {
+
         if (!nomAhorro.getText().toString().equals("") && !montoAhorro.getText().toString().equals("") && !cuentaAhorro.getText().toString().equals("") && !ahorroObjetivo.getText().toString().equals("") && !ahorroEmergencia.getText().toString().equals("") && !AhorroHipotecario.getText().toString().equals("")) {
             try {
                 OutputStreamWriter createFileInformation = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
@@ -77,16 +78,15 @@ public class AhorrosFragment extends Fragment {
                 createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + ahorroObjetivo + "\n" + ahorroEmergencia.getText().toString() + "\n" + AhorroHipotecario.getText().toString());
                 createFileInformation.flush();
                 createFileInformation.close();
-
-
-                Intent Bmeters = new Intent(getActivity(), MainActivity.class);
-                startActivity(Bmeters);
+                Toast.makeText(getActivity(), "Registrado correctamente", Toast.LENGTH_SHORT).show();
+                Intent registroAhor = new Intent(getActivity(), MainActivity.class);
+                startActivity(registroAhor);
             } catch (IOException e) {
-
+                Toast.makeText(getActivity(), "No se pudieron guardar los datos", Toast.LENGTH_SHORT).show();
             }
 
         }
-        }
+    }
 
 
     private boolean archivoExiste(String files[], String nameFile) {
@@ -107,9 +107,9 @@ public class AhorrosFragment extends Fragment {
         editor.apply();
     }
 
-    public void regresarPagos(View view) {
-        Intent Bmeters = new Intent(getActivity(), MainActivity.class);
-        startActivity(Bmeters);
+   public void regresarPrincipal(View view) {
+        Intent regresarMain = new Intent(getActivity(), MainActivity.class);
+        startActivity(regresarMain);
 
     }
 }
