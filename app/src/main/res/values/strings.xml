@@ -61,4 +61,12 @@
     <!-- Mostrar pagos -->
     <string name="titulo_pagos">Pagos registrados</string>
     <string name="txv_pagos">Aquí aparecerán tus pagos registrados</string>
+
+    <!-- Fragment inversiones -->
+    <string-array name="spn_riesgos">
+        <item>Seleccione...</item>
+        <item>Bajo</item>
+        <item>Medio</item>
+        <item>Alto</item>
+    </string-array>
 </resources>
