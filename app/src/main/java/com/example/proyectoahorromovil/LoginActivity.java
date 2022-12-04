@@ -1,7 +1,6 @@
 package com.example.proyectoahorromovil;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,7 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import com.example.proyectoahorromovil.Modelo.Usuario;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -76,11 +75,11 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         InputStreamReader contentFiles = new InputStreamReader(openFileInput(user.getText().toString() + "_credentials.txt"));
                         BufferedReader br = new BufferedReader(contentFiles);
-                        String lineOfName = br.readLine();
-                        String lineOfLastname = br.readLine();
-                        String lineOfAge = br.readLine();
-                        String lineOfSex = br.readLine();
-                        String lineOfUsername = br.readLine();
+                            br.readLine();
+                            br.readLine();
+                            br.readLine();
+                            br.readLine();
+                            br.readLine();
                         String lineOfPasswd = br.readLine();
                         br.close();
                         contentFiles.close();

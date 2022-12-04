@@ -49,6 +49,11 @@ public class RegistroActivity extends AppCompatActivity {
             if(!name.getText().toString().equals("") && !lastname.getText().toString().equals("") && !age.getText().toString().equals("") && !sex.getSelectedItem().toString().equals("Selecciona") && !username.getText().toString().equals("") && !passwdUser.getText().toString().equals("")) {
                 try {
                     OutputStreamWriter createFileInformationUser = new OutputStreamWriter(openFileOutput(username.getText().toString() + "_credentials.txt", Activity.MODE_PRIVATE));
+                        new OutputStreamWriter(openFileOutput(username.getText().toString() + "_savings.txt", Activity.MODE_PRIVATE));
+                        new OutputStreamWriter(openFileOutput(username.getText().toString() + "_investments.txt", Activity.MODE_PRIVATE));
+                        new OutputStreamWriter(openFileOutput(username.getText().toString() + "_payments.txt", Activity.MODE_PRIVATE));
+                        new OutputStreamWriter(openFileOutput(username.getText().toString() + "_bills.txt", Activity.MODE_PRIVATE));
+                        new OutputStreamWriter(openFileOutput(username.getText().toString() + "_incomes.txt", Activity.MODE_PRIVATE));
                     String select = sex.getSelectedItem().toString();
                     String sexSelected = "";
                     if (select.equals("Femenino")) {
