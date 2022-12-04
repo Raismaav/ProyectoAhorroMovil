@@ -1,18 +1,13 @@
 package com.example.proyectoahorromovil.Modelo;
 
-public class Gasto {
+public class Gasto extends Movimientos {
 
-    protected String Tipo, Lugar, Nombre;
-    protected int Monto;
+    protected String tipoGasto, lugarGasto;
 
     public Gasto() { /* Constructor vacío */ }
 
-    public String getNombre() { return Nombre; }
-    public void setNombre(String nombre) { Nombre = nombre; }
-    public int getMonto() { return Monto; }
-    public void setMonto(int monto) { Monto = monto; }
-    public String getTipo() { return Tipo; }
-    public void setTipo(String tipo) { Tipo = tipo; }
-    public String getLugar() { return Lugar; }
-    public void setLugar(String lugar) { Lugar = lugar; }
+    public String getTipoGasto() { return tipoGasto; }
+    public void setTipoGasto(String tipoGasto) { this.tipoGasto = tipoGasto; }
+    public String getLugarGasto() { return lugarGasto; }
+    public void setLugarGasto(String lugarGasto) { this.lugarGasto = lugarGasto; }
 }

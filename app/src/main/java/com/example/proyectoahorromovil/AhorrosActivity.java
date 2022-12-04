@@ -29,7 +29,7 @@ public class AhorrosActivity extends AppCompatActivity {
         contenido = findViewById(R.id.txtMostrarAhorros);
         regresar = findViewById(R.id.btnRegresarAhorros);
         String files[] = fileList();
-        if(archivoExiste(files, "_savings.txt")) {
+        if(archivoExiste(files, usuario + "_savings.txt")) {
             try {
                 InputStreamReader contentFile = new InputStreamReader(openFileInput(usuario + "_savings.txt"));
                 BufferedReader br = new BufferedReader(contentFile);
