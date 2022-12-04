@@ -1,4 +1,4 @@
-package com.example.proyectoahorromovil.Mostrar;
+package com.example.proyectoahorromovil;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
