@@ -27,7 +27,7 @@ import java.io.OutputStreamWriter;
 
 public class GastosFragment extends Fragment {
     EditText nomGasto,montoGasto, lugarGasto;
-    RadioButton fijoGasto,variadoGasto, inesperadoGasto; 
+    RadioButton fijoGasto,variadoGasto, inesperadoGasto;
     public Gasto gastoTipo;
     public GastosFragment() {
 
@@ -49,15 +49,15 @@ public class GastosFragment extends Fragment {
         fijoGasto = view.findViewById(R.id.rb_fijo_gasto);
         variadoGasto = view.findViewById(R.id.rb_variado_gasto);
         inesperadoGasto = view.findViewById(R.id.rb_inesperado_gasto);
-        
+
         gastoTipo = new Gasto();
 
-        return inflater.inflate(R.layout.fragment_ahorros, container, false);
+        return inflater.inflate(R.layout.fragment_ingresos, container, false);
 
 
     }
 
-    public void RegistrarAhorro(View view) {
+    public void RegistrarGasto(View view) {
         if(fijoGasto.isChecked()){
             gastoTipo.setTipo("Gasto fijo");
 
@@ -94,13 +94,13 @@ public class GastosFragment extends Fragment {
     }
 
 
-    public void guardardatos(Gasto ahorro) {
+    public void guardardatos(Gasto gasto) {
         SharedPreferences preferences = getActivity().getSharedPreferences("gastos.dat", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Nombre Gasto", ahorro.getNombre());
-        editor.putInt("Monto del gasto", ahorro.getMonto());
-        editor.putString("Lugar del gasto", ahorro.getLugar());
-        editor.putString("Tipo de gasto", ahorro.getTipo());
+        editor.putString("Nombre Gasto", gasto.getNombre());
+        editor.putInt("Monto del gasto", gasto.getMonto());
+        editor.putString("Lugar del gasto", gasto.getLugar());
+        editor.putString("Tipo de gasto", gasto.getTipo());
         editor.apply();
     }
 
@@ -110,6 +110,6 @@ public class GastosFragment extends Fragment {
 
     }
 
-  
+
 
 }
