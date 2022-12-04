@@ -22,11 +22,11 @@ import java.io.OutputStreamWriter;
 
 public class AhorrosFragment extends Fragment {
 
-    View view;
-    EditText nombre, monto, cuenta;
-    RadioButton ahorroObjetivo, ahorroEmergencia, ahorroHipotecario;
-    Button registrarAhorro;
-    CalendarView fechaAhorro;
+    private View view;
+    private EditText nombre, monto, cuenta;
+    private RadioButton ahorroObjetivo, ahorroEmergencia, ahorroHipotecario;
+    private Button registrarAhorro;
+    private CalendarView fechaAhorro;
     private String usuario;
     private Ahorro objeto;
 

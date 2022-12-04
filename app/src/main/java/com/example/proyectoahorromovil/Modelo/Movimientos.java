@@ -7,11 +7,7 @@ public class Movimientos implements Serializable {
     String NombreMovimiento, TipoMovimiento, FechaMovimiento;
     int MontoMovimiento;
 
-    public Movimientos(String nombreMovimiento, String tipoMovimiento, String fechaMovimiento, int montoMovimiento) {
-       this.NombreMovimiento = nombreMovimiento;
-       this.TipoMovimiento = tipoMovimiento;
-       this.FechaMovimiento = fechaMovimiento;
-       this.MontoMovimiento = montoMovimiento;
+    public Movimientos() {
     }
 
     public String getNombreMovimiento() { return NombreMovimiento; }

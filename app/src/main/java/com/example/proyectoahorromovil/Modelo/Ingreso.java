@@ -1,11 +1,24 @@
 package com.example.proyectoahorromovil.Modelo;
 
-public class Ingreso extends Gasto {
+public class Ingreso extends Movimientos {
+    private String lugarIngreso, tipoIngreso;
+
     public Ingreso() {
-        super();
-        this.Lugar = "";
-        this.Nombre = "";
-        this.Monto = 0;
-        this.Tipo = "";
+    }
+
+    public String getLugarIngreso() {
+        return lugarIngreso;
+    }
+
+    public String getTipoIngreso() {
+        return tipoIngreso;
+    }
+
+    public void setLugarIngreso(String lugarIngreso) {
+        this.lugarIngreso = lugarIngreso;
+    }
+
+    public void setTipoIngreso(String tipoIngreso) {
+        this.tipoIngreso = tipoIngreso;
     }
 }

@@ -91,13 +91,13 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Escribe el monto del ingreso"
-            android:inputType="textPersonName"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/clv_fecha_ingreso" />
 
         <EditText
-            android:id="@+id/edt_cuenta_ingreso"
+            android:id="@+id/edt_lugar_ingreso"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
@@ -121,7 +121,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_cuenta_ingreso" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_lugar_ingreso" />
 
         <LinearLayout
             android:layout_width="wrap_content"
