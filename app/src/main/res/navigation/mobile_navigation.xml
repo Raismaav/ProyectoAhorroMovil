@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/nav_pagos"
-        android:name="com.example.proyectoahorromovil.fragments.PagosFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.PagosFragment"
         android:label="@string/menu_pagos"
         tools:layout="@layout/fragment_pagos" />
 
     <fragment
         android:id="@+id/nav_ahorros"
-        android:name="com.example.proyectoahorromovil.fragments.AhorrosFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.AhorrosFragment"
         android:label="@string/menu_ahorros"
         tools:layout="@layout/fragment_ahorros" />
 
     <fragment
         android:id="@+id/nav_inversiones"
-        android:name="com.example.proyectoahorromovil.fragments.InversionesFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.InversionesFragment"
         android:label="@string/menu_inversiones"
         tools:layout="@layout/fragment_inversiones" />
 
     <fragment
         android:id="@+id/nav_gastos"
-        android:name="com.example.proyectoahorromovil.fragments.GastosFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.GastosFragment"
         android:label="@string/menu_gastos"
         tools:layout="@layout/fragment_gastos" />
 
     <fragment
         android:id="@+id/nav_ingresos"
-        android:name="com.example.proyectoahorromovil.fragments.IngresosFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.IngresosFragment"
         android:label="@string/menu_ingresos"
         tools:layout="@layout/fragment_ingresos" />
 
@@ -42,7 +42,7 @@
         tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/logrosFragment"
-        android:name="com.example.proyectoahorromovil.fragments.LogrosFragment"
+        android:name="com.example.proyectoahorromovil.Fragments.Awards.LogrosFragment"
         android:label="fragment_logros"
         tools:layout="@layout/fragment_logros" />
 

@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m32,14a4,4 0,1 0,-4 -4,4.0042 4.0042,0 0,0 4,4zM32,8a2,2 0,1 1,-2 2,2.0023 2.0023,0 0,1 2,-2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m49,13h-2v-3a1,1 0,0 0,-1 -1h-6.062a8.0008,8.0008 0,0 0,-15.876 0h-6.062a1,1 0,0 0,-1 1v3h-2a4.0042,4.0042 0,0 0,-4 4v41a4.0042,4.0042 0,0 0,4 4h34a4.0042,4.0042 0,0 0,4 -4v-41a4.0042,4.0042 0,0 0,-4 -4zM19,11h6a1,1 0,0 0,1 -1,6 6,0 0,1 12,0 1,1 0,0 0,1 1h6v6h-26zM51,58a2.0023,2.0023 0,0 1,-2 2h-34a2.0023,2.0023 0,0 1,-2 -2v-41a2.0023,2.0023 0,0 1,2 -2h2v3a1,1 0,0 0,1 1h28a1,1 0,0 0,1 -1v-3h2a2.0023,2.0023 0,0 1,2 2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m46.293,22.293 l-3.293,3.2929 -1.293,-1.2929a1,1 0,0 0,-1.414 1.414l2,2a0.9994,0.9994 0,0 0,1.414 0l4,-4a1,1 0,0 0,-1.414 -1.414z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m36,25h-19a1,1 0,0 0,0 2h19a1,1 0,0 0,0 -2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m46.293,31.293 l-3.293,3.2929 -1.293,-1.2929a1,1 0,0 0,-1.414 1.414l2,2a0.9994,0.9994 0,0 0,1.414 0l4,-4a1,1 0,0 0,-1.414 -1.414z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m36,34h-19a1,1 0,0 0,0 2h19a1,1 0,0 0,0 -2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m36,43h-19a1,1 0,0 0,0 2h19a1,1 0,0 0,0 -2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m36,53h-19a1,1 0,0 0,0 2h19a1,1 0,0 0,0 -2z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m47,51h-6a1,1 0,0 0,-1 1v4a1,1 0,0 0,1 1h6a1,1 0,0 0,1 -1v-4a1,1 0,0 0,-1 -1zM46,55h-4v-2h4z"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="m47,41h-6a1,1 0,0 0,-1 1v4a1,1 0,0 0,1 1h6a1,1 0,0 0,1 -1v-4a1,1 0,0 0,-1 -1zM46,45h-4v-2h4z"/>
+</vector>

@@ -110,12 +110,13 @@
                     android:background="@drawable/tarjeta"
                     android:gravity="center"
                     android:orientation="vertical">
+
                     <ImageButton
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:background="@drawable/ic_10_trofeo"
-                        android:elevation="2dp">
-                    </ImageButton>
+                        android:contentDescription="@string/app_name"
+                        android:elevation="2dp"></ImageButton>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
