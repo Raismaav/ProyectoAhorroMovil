@@ -89,7 +89,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/txtRiesgos"
+        android:id="@+id/txv_riesgo_inversiones"
         android:layout_width="139dp"
         android:layout_height="33dp"
         android:hint="nivelRiesgo"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRiesgos" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_riesgo_inversiones" />
 
     <CheckBox
         android:id="@+id/ckMedio"
@@ -132,7 +132,7 @@
         android:layout_marginBottom="21dp"
         android:hint="alto"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlazos"
+        app:layout_constraintBottom_toTopOf="@+id/txv_plazo_inversiones"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlazos" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_plazo_inversiones" />
 
     <CheckBox
         android:id="@+id/ckMediano"
@@ -217,7 +217,7 @@
         app:layout_constraintVertical_bias="0.96" />
 
     <TextView
-        android:id="@+id/txtPlazos"
+        android:id="@+id/txv_plazo_inversiones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="plazoInversion"
