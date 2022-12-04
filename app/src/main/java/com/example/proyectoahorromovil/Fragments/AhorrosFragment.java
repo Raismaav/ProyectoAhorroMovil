@@ -98,7 +98,7 @@ public class AhorrosFragment extends Fragment {
     public void guardarArchivo() {
         try {
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_savings.txt", Activity.MODE_PRIVATE));
-            saves.write(" Nombre del beneficiario: " + objeto.getNombreBeneficiario() + "\n Tipo: " + objeto.getTipoAhorro() + "\n Fecha: " + objeto.getFechaAhorro() + "\n Monto: " + objeto.getMontoAhorro() + "\n Cuenta destino: " + objeto.getCuentaAhorro());
+            saves.write("  Nombre del beneficiario: " + objeto.getNombreBeneficiario() + "\n Tipo: " + objeto.getTipoAhorro() + "\n Fecha: " + objeto.getFechaAhorro() + "\n Monto: " + objeto.getMontoAhorro() + "\n Cuenta destino: " + objeto.getCuentaAhorro());
             saves.flush();
             saves.close();
         } catch (IOException ex) {
