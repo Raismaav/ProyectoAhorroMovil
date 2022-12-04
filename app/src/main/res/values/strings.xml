@@ -42,5 +42,23 @@
     <string name="btn_registrar">Registrarse</string>
     <string name="btn_regresar">Regresar</string>
 
+    <!-- Mostrar ahorros -->
+    <string name="titulo_ahorros">Ahorros registrados</string>
+    <string name="txv_ahorros">Aquí aparecerán tus ahorros registrados</string>
 
+    <!-- Mostrar gastos -->
+    <string name="titulo_gastos">Gastos registrados</string>
+    <string name="txv_gastos">Aquí aparecerán tus gastos registrados</string>
+
+    <!-- Mostrar ingresos -->
+    <string name="titulo_ingresos">Ingresos registrados</string>
+    <string name="txv_ingresos">Aquí aparecerán tus ingresos registrados</string>
+
+    <!-- Mostrar inversiones -->
+    <string name="titulo_inversiones">Inversiones registradas</string>
+    <string name="txv_inversiones">Aquí aparecerán tus inversiones registradas</string>
+
+    <!-- Mostrar pagos -->
+    <string name="titulo_pagos">Pagos registrados</string>
+    <string name="txv_pagos">Aquí aparecerán tus pagos registrados</string>
 </resources>
