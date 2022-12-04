@@ -40,10 +40,11 @@ public class LoginActivity extends AppCompatActivity {
     public void ingresarSitio(View view) {
         if (!user.getText().toString().equals("") && !passwd.getText().toString().equals("")) {
             String files[] = fileList();
-            if(archivoExiste(files, user.getText().toString() + "_credentials.txt")) {
+            String usuario = user.getText().toString();
+            if(archivoExiste(files, usuario + "_credentials.txt")) {
                 if(save.isChecked()) {
                     try {
-                        InputStreamReader contentFiles = new InputStreamReader(openFileInput(user.getText().toString() + "_credentials.txt"));
+                        InputStreamReader contentFiles = new InputStreamReader(openFileInput(usuario + "_credentials.txt"));
                         BufferedReader br = new BufferedReader(contentFiles);
                         Usuario userClass = new Usuario();
                             String lineOfName = br.readLine();
@@ -73,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } else {
                     try {
-                        InputStreamReader contentFiles = new InputStreamReader(openFileInput(user.getText().toString() + "_credentials.txt"));
+                        InputStreamReader contentFiles = new InputStreamReader(openFileInput(usuario + "_credentials.txt"));
                         BufferedReader br = new BufferedReader(contentFiles);
                             br.readLine();
                             br.readLine();
@@ -85,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                         contentFiles.close();
                             if(passwd.getText().toString().equals(lineOfPasswd)) {
                                 Intent loadMain = new Intent(LoginActivity.this, MainActivity.class);
+                                loadMain.putExtra("usuario", usuario);
                                 startActivity(loadMain);
                                 finish();
                             } else {

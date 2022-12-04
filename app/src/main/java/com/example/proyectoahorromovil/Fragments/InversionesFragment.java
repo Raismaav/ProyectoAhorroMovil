@@ -30,12 +30,14 @@ public class InversionesFragment extends Fragment {
     RadioButton accionInversion, bonos, mercadoValores;
     CheckBox BajoRiesgo, medioRiesgo, altoRiesgo, cortoPlazo, medianoPlazo, largoPlazo;
     Inversion inversionTipo, inversionPlazo, inversionRiesgo;
+    private String usuario;
 
     public InversionesFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @Override
@@ -69,7 +71,6 @@ public class InversionesFragment extends Fragment {
 
         } else if(mercadoValores.isChecked()){
             inversionTipo.setTipoInversion("Inversion mercado de valores");
-
         }
 
         if(BajoRiesgo.isChecked()){

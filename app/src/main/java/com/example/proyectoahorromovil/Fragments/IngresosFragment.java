@@ -29,6 +29,7 @@ public class IngresosFragment extends Fragment {
     EditText nomIngreso,montoIngreso, lugarIngreso;
     RadioButton fijoIngreso,variadoIngreso, esporadicoIngreso;
     public Ingreso ingresoTipo;
+    private String usuario;
     public IngresosFragment() {
 
     }
@@ -36,6 +37,7 @@ public class IngresosFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @Override

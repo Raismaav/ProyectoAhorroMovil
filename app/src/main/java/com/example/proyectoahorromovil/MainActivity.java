@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.proyectoahorromovil.Modelo.Usuario;
 import com.example.proyectoahorromovil.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    private TextView txv_usuario_header;
+    private String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        txv_usuario_header = findViewById(R.id.txv_usuario_header);
+        usuario = getIntent().getStringExtra("usuario");
     }
 
     @Override
@@ -54,26 +63,31 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.mi_add_pagos:
                 intent = new Intent(this, PagosActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
                 break;
 
             case R.id.mi_add_ahorros:
                 intent = new Intent(this, AhorrosActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
                 break;
 
             case R.id.mi_add_inversiones:
                 intent = new Intent(this, InversionesActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
                 break;
 
             case R.id.mi_add_gastos:
                 intent = new Intent(this, GastosActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
                 break;
 
             case R.id.mi_add_ingresos:
                 intent = new Intent(this, IngresosActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
                 break;
         }
