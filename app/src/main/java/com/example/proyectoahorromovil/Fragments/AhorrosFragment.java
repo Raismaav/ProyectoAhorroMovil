@@ -1,11 +1,6 @@
 package com.example.proyectoahorromovil.Fragments;
 
-
-import static android.content.Context.MODE_PRIVATE;
-
 import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,33 +11,25 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-import com.example.proyectoahorromovil.LoginActivity;
-import com.example.proyectoahorromovil.MainActivity;
 import com.example.proyectoahorromovil.R;
 import com.example.proyectoahorromovil.Modelo.Ahorro;
-import com.example.proyectoahorromovil.RegistroActivity;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-
 import java.io.OutputStreamWriter;
-import java.util.Calendar;
 
 public class AhorrosFragment extends Fragment {
-    EditText nomAhorro, montoAhorro, cuentaAhorro;
-    RadioButton ahorroObjetivo, ahorroEmergencia, AhorroHipotecario;
-    int anio, dia, mes;
-    CalendarView calendarAhorro;
-    Button RegistrarAhor, RegresarAhor;
-private Ahorro tipo;
 
-    public AhorrosFragment() {
+    View view;
+    EditText nombre, monto, cuenta;
+    RadioButton ahorroObjetivo, ahorroEmergencia, ahorroHipotecario;
+    Button registrarAhorro;
+    CalendarView fechaAhorro;
+    private Ahorro objeto;
 
-    }
+    public AhorrosFragment() { /* Constructor vacío */ }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,79 +37,79 @@ private Ahorro tipo;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_ahorros, container, false);
-        nomAhorro = view.findViewById(R.id.edt_nombre_ahorro);
-        montoAhorro = view.findViewById(R.id.edt_monto_ahorro);
-        cuentaAhorro = view.findViewById(R.id.edt_cuenta_ahorro);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_ahorros, container, false);
+        nombre = view.findViewById(R.id.edt_nombre_ahorro);
         ahorroObjetivo = view.findViewById(R.id.rb_objetivo_ahorro);
         ahorroEmergencia = view.findViewById(R.id.rb_emergencia_ahorro);
-        AhorroHipotecario = view.findViewById(R.id.rb_hipoteca_ahorro);
-        calendarAhorro = view.findViewById(R.id.clv_fecha_ahorro);
-        RegistrarAhor = view.findViewById(R.id.btn_registrar_ahorro);
-        RegresarAhor = view.findViewById(R.id.btn_regresar_ahorro);
+        ahorroHipotecario = view.findViewById(R.id.rb_hipoteca_ahorro);
+        fechaAhorro = view.findViewById(R.id.clv_fecha_ahorro);
+        monto = view.findViewById(R.id.edt_monto_ahorro);
+        cuenta = view.findViewById(R.id.edt_cuenta_ahorro);
+        registrarAhorro = view.findViewById(R.id.btn_registrar_ahorro);
+        objeto = new Ahorro();
 
-        tipo = new Ahorro();
+        fechaAhorro.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                String fecha = i2 + "/" + i1 + "/" + i;
+                objeto.setFechaAhorro(fecha);
+                Toast.makeText(getActivity(), fecha, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        return inflater.inflate(R.layout.fragment_ahorros, container, false);
+        registrarAhorro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registroAhorro();
+            }
+        });
 
-
+        return view;
     }
 
-    public void RegistrarAhorro(View view) {
-if(ahorroObjetivo.isChecked()){
-    tipo.setTipoAhorro("Ahorro objetivo");
-
-}else if(ahorroEmergencia.isChecked()){
-    tipo.setTipoAhorro("Ahorro emergencia");
-    
-} else if(AhorroHipotecario.isChecked()){
-    tipo.setTipoAhorro("Ahorro hipotecario");
-
-}
-
-        if (!nomAhorro.getText().toString().equals("") && !montoAhorro.getText().toString().equals("") && !cuentaAhorro.getText().toString().equals("") && !tipo.equals("") ) {
-            try {
-                OutputStreamWriter createFileInformation = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
-
-                createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + tipo);
-                createFileInformation.flush();
-                createFileInformation.close();
-                Toast.makeText(getActivity(), "Registrado correctamente", Toast.LENGTH_SHORT).show();
-                Intent registroAhor = new Intent(getActivity(), MainActivity.class);
-                startActivity(registroAhor);
-            } catch (IOException e) {
-                Toast.makeText(getActivity(), "No se pudieron guardar los datos", Toast.LENGTH_SHORT).show();
-            }
-
+    public void registroAhorro() {
+        if(!nombre.getText().toString().equals("") && !monto.getText().toString().equals("") && !cuenta.getText().toString().equals("") && (ahorroObjetivo.isChecked() || ahorroEmergencia.isChecked() || ahorroHipotecario.isChecked())) {
+            String nombreB = nombre.getText().toString();
+            String tipoA = "";
+                if (ahorroObjetivo.isChecked()) {
+                    tipoA = "Ahorro para un objetivo";
+                } else if (ahorroEmergencia.isChecked()) {
+                    tipoA = "Ahorro de emergencia";
+                } else if (ahorroHipotecario.isChecked()) {
+                    tipoA = "Ahorro hipotecario";
+                }
+           String montoA = monto.getText().toString();
+           String cuentaA = cuenta.getText().toString();
+               objeto.setNombreBeneficiario(nombreB);
+               objeto.setTipoAhorro(tipoA);
+               objeto.setMontoAhorro(Integer.parseInt(montoA));
+               objeto.setCuentaAhorro(cuentaA);
+           guardarArchivo();
+           limpiar();
+           Toast.makeText(getActivity(), "El ahorro fue registrado con exito..", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-
-    private boolean archivoExiste(String files[], String nameFile) {
-        for (int i = 0; i < files.length; i++)
-            if (nameFile.equals(files[i]))
-                return true;
-        return false;
+    public void guardarArchivo() {
+        try {
+            OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
+            saves.write(objeto.getNombreBeneficiario() + "\n" + objeto.getTipoAhorro() + "\n" + objeto.getFechaAhorro() + "\n" + objeto.getMontoAhorro() + "\n" + objeto.getCuentaAhorro());
+            saves.flush();
+            saves.close();
+        } catch (IOException ex) {
+            Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
+        }
     }
 
-
-    public void guardardatos(Ahorro ahorro) {
-        SharedPreferences preferences = getActivity().getSharedPreferences("ahorro.dat", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Nombre ahorro", ahorro.getNombreBeneficiario());
-        editor.putInt("Monto ahorro", ahorro.getMontoAhorro());
-        editor.putString("Cuenta ahorro", ahorro.getCuentaAhorro());
-        editor.putString("Tipo ahorro", ahorro.getTipoAhorro());
-        editor.apply();
-    }
-
-   public void regresarPrincipal(View view) {
-        Intent regresarMain = new Intent(getActivity(), MainActivity.class);
-        startActivity(regresarMain);
-
+    public void limpiar() {
+        nombre.setText("");
+        monto.setText("");
+        cuenta.setText("");
+        ahorroObjetivo.setChecked(false);
+        ahorroEmergencia.setChecked(false);
+        ahorroHipotecario.setChecked(false);
     }
 }

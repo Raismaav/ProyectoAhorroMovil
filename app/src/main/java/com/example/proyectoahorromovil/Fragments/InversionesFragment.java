@@ -49,9 +49,6 @@ public class InversionesFragment extends Fragment {
         accionInversion = view.findViewById(R.id.rb_accion);
         bonos = view.findViewById(R.id.rb_bonos);
         mercadoValores = view.findViewById(R.id.rb_valores);
-        BajoRiesgo = view.findViewById(R.id.chb_bajo);
-        medioRiesgo = view.findViewById(R.id.chb_medio);
-        altoRiesgo = view.findViewById(R.id.chb_alto);
         cortoPlazo = view.findViewById(R.id.chb_corto);
         medianoPlazo = view.findViewById(R.id.chb_mediano);
         largoPlazo = view.findViewById(R.id.chb_largo);
