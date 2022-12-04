@@ -1,33 +1,31 @@
 package com.example.proyectoahorromovil.Fragments;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-import com.example.proyectoahorromovil.MainActivity;
-import com.example.proyectoahorromovil.Modelo.Inversion;
 import com.example.proyectoahorromovil.Modelo.Pago;
 import com.example.proyectoahorromovil.R;
-
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class PagosFragment extends Fragment {
-    private EditText claveRastreo, emisor, receptor, cuentaBeneficiaria, montoPago;
-    private String usuario;
 
-    public PagosFragment() {}
+    View view;
+    EditText clave, emisor, receptor, cuenta, monto;
+    Button registrarPago;
+    CalendarView fechaPago;
+    private String usuario;
+    private Pago objeto;
+
+    public PagosFragment() { /* Constructor vacío */ }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,63 +33,73 @@ public class PagosFragment extends Fragment {
         usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_inversiones, container, false);
-        claveRastreo = view.findViewById(R.id.edt_clave_pago);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_pagos, container, false);
+        clave = view.findViewById(R.id.edt_clave_pago);
+        fechaPago = view.findViewById(R.id.clv_fecha_pago);
         emisor = view.findViewById(R.id.edt_emisor_pago);
         receptor = view.findViewById(R.id.edt_cuenta_pago);
-        cuentaBeneficiaria = view.findViewById(R.id.edt_beneficiario_pago);
-        montoPago = view.findViewById(R.id.edt_monto_pago);
+        monto = view.findViewById(R.id.edt_monto_pago);
+        cuenta = view.findViewById(R.id.edt_beneficiario_pago);
+        registrarPago = view.findViewById(R.id.btn_registrar_pago);
+        objeto = new Pago();
 
-
-        return inflater.inflate(R.layout.fragment_pagos, container, false);
-    }
-    public void RegistrarPagos(View view) {
-
-        if (!claveRastreo.getText().toString().equals("") && !emisor.getText().toString().equals("") && !receptor.getText().toString().equals("") && !cuentaBeneficiaria.getText().toString().equals("")&& !montoPago.getText().toString().equals("") ) {
-            try {
-                OutputStreamWriter createFileInformationUser = new OutputStreamWriter(getActivity().openFileOutput("_payments.txt", Activity.MODE_PRIVATE));
-
-                createFileInformationUser.write(claveRastreo.getText().toString() + "\n" + emisor.getText().toString() + "\n" + receptor.getText().toString() + "\n" + cuentaBeneficiaria.getText().toString() + "\n"+ montoPago.getText().toString() + "\n");
-                createFileInformationUser.flush();
-                createFileInformationUser.close();
-                Toast.makeText(getActivity(), "Pago registrado correctamente", Toast.LENGTH_SHORT).show();
-                Intent registroInversion = new Intent(getActivity(), MainActivity.class);
-                startActivity(registroInversion);
-            } catch (IOException e) {
-                Toast.makeText(getActivity(), "No se pudieron guardar los datos", Toast.LENGTH_SHORT).show();
+        fechaPago.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                String fecha = i2 + "/" + i1 + "/" + i;
+                objeto.setFechaPago(fecha);
+                Toast.makeText(getActivity(), fecha, Toast.LENGTH_SHORT).show();
             }
+        });
 
+        registrarPago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registroPago();
+            }
+        });
+
+        return view;
+    }
+
+    public void registroPago() {
+        if(!clave.getText().toString().equals("") && !emisor.getText().toString().equals("") && !receptor.getText().toString().equals("") && !cuenta.getText().toString().equals("") && !monto.getText().toString().equals("")) {
+            String claveP = clave.getText().toString();
+            String emisorP = emisor.getText().toString();
+            String receptorP = receptor.getText().toString();
+            String cuentaP = cuenta.getText().toString();
+            String montoP = monto.getText().toString();
+            objeto.setClaveRastreo(claveP);
+            objeto.setEmisor(emisorP);
+            objeto.setReceptor(receptorP);
+            objeto.setCuentaBeneficiaria(Integer.parseInt(cuentaP));
+            objeto.setMontoPago(Integer.parseInt(montoP));
+            guardarArchivo();
+            limpiar();
+            Toast.makeText(getActivity(), "El pago fue registrado con exito.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private boolean archivoExiste(String files[], String nameFile) {
-        for (int i = 0; i < files.length; i++)
-            if (nameFile.equals(files[i]))
-                return true;
-        return false;
+    public void guardarArchivo() {
+        try {
+            OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_payments.txt", Activity.MODE_PRIVATE));
+            saves.write(objeto.getClaveRastreo() + "\n" + objeto.getFechaPago() + "\n" + objeto.getEmisor() + "\n" + objeto.getReceptor() + "\n" + objeto.getCuentaBeneficiaria() + "\n" + objeto.getMontoPago());
+            saves.flush();
+            saves.close();
+        } catch (IOException ex) {
+            Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
+        }
     }
 
-
-    public void guardardatos(Pago pagos) {
-        SharedPreferences preferences = getActivity().getSharedPreferences("pagos.dat", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Clave rastreo", pagos.getClaveRastreo());
-        editor.putString("Emisor", pagos.getEmisor());
-        editor.putString("Receptorn", pagos.getReceptor());
-        editor.putInt("Cuenta beneficiaria", pagos.getCuentaBeneficiaria());
-        editor.putInt("Montopago", pagos.getMontoPago());
-        editor.apply();
+    public void limpiar() {
+        clave.setText("");
+        monto.setText("");
+        emisor.setText("");
+        receptor.setText("");
+        cuenta.setText("");
     }
-
-    public void regresarPrincipal(View view) {
-        Intent regresarMain = new Intent(getActivity(), MainActivity.class);
-        startActivity(regresarMain);
-
-    }
-
 }

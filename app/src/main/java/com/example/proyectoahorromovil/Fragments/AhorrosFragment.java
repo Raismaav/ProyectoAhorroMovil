@@ -89,7 +89,7 @@ public class AhorrosFragment extends Fragment {
                objeto.setCuentaAhorro(cuentaA);
            guardarArchivo();
            limpiar();
-           Toast.makeText(getActivity(), "El ahorro fue registrado con exito..", Toast.LENGTH_SHORT).show();
+           Toast.makeText(getActivity(), "El ahorro fue registrado con exito.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }

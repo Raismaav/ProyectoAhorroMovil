@@ -88,7 +88,7 @@ public class GastosFragment extends Fragment {
             objeto.setLugarGasto(lugarG);
             guardarArchivo();
             limpiar();
-            Toast.makeText(getActivity(), "El gasto fue registrado con exito..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "El gasto fue registrado con exito.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }
