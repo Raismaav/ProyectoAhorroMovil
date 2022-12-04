@@ -97,7 +97,7 @@ public class InversionesFragment extends Fragment {
 
         if (!nomInversion.getText().toString().equals("") && !montoInversion.getText().toString().equals("") && !objetivoInversion.getText().toString().equals("") && !inversionTipo.equals("")&& !inversionRiesgo.equals("")&& !inversionPlazo.equals("") ) {
             try {
-                OutputStreamWriter createFileInformationUser = new OutputStreamWriter(getActivity().openFileOutput("_incomes.txt", Activity.MODE_PRIVATE));
+                OutputStreamWriter createFileInformationUser = new OutputStreamWriter(getActivity().openFileOutput("_investments.txt", Activity.MODE_PRIVATE));
 
                 createFileInformationUser.write(nomInversion.getText().toString() + "\n" + montoInversion.getText().toString() + "\n" + objetivoInversion.getText().toString() + "\n" + inversionTipo+ "\n" + inversionPlazo+ "\n" + inversionRiesgo);
                 createFileInformationUser.flush();
