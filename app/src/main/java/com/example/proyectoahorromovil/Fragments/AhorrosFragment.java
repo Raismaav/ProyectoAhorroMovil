@@ -71,27 +71,22 @@ public class AhorrosFragment extends Fragment {
 
     public void RegistrarAhorro(View view) {
         if (!nomAhorro.getText().toString().equals("") && !montoAhorro.getText().toString().equals("") && !cuentaAhorro.getText().toString().equals("") && !ahorroObjetivo.getText().toString().equals("") && !ahorroEmergencia.getText().toString().equals("") && !AhorroHipotecario.getText().toString().equals("")) {
-
             try {
-                try {
-                    OutputStreamWriter createFileInformation = new OutputStreamWriter(getActivity().openFileOutput(nomAhorro.getText().toString() + "_savings.txt", Activity.MODE_PRIVATE));
+                OutputStreamWriter createFileInformation = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
 
-                    createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + ahorroObjetivo + "\n" + ahorroEmergencia.getText().toString() + "\n" + AhorroHipotecario.getText().toString());
-                    createFileInformation.flush();
-                    createFileInformation.close();
+                createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + ahorroObjetivo + "\n" + ahorroEmergencia.getText().toString() + "\n" + AhorroHipotecario.getText().toString());
+                createFileInformation.flush();
+                createFileInformation.close();
 
 
-                    Intent Bmeters = new Intent(getActivity(), MainActivity.class);
-                    startActivity(Bmeters);
-                } catch (IOException e) {
+                Intent Bmeters = new Intent(getActivity(), MainActivity.class);
+                startActivity(Bmeters);
+            } catch (IOException e) {
 
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+
         }
-    }
+        }
 
 
     private boolean archivoExiste(String files[], String nameFile) {
