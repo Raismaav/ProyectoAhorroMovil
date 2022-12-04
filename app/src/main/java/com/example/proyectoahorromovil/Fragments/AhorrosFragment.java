@@ -38,6 +38,7 @@ public class AhorrosFragment extends Fragment {
     int anio, dia, mes;
     CalendarView calendarAhorro;
     Button RegistrarAhor, RegresarAhor;
+private Ahorro tipo;
 
     public AhorrosFragment() {
 
@@ -63,19 +64,30 @@ public class AhorrosFragment extends Fragment {
         RegistrarAhor = view.findViewById(R.id.btn_registrar_ahorro);
         RegresarAhor = view.findViewById(R.id.btn_regresar_ahorro);
 
+        tipo = new Ahorro();
 
         return inflater.inflate(R.layout.fragment_ahorros, container, false);
 
 
     }
 
-   public void RegistrarAhorro(View view) {
+    public void RegistrarAhorro(View view) {
+if(ahorroObjetivo.isChecked()){
+    tipo.setTipoAhorro("Ahorro objetivo");
 
-        if (!nomAhorro.getText().toString().equals("") && !montoAhorro.getText().toString().equals("") && !cuentaAhorro.getText().toString().equals("") && !ahorroObjetivo.getText().toString().equals("") && !ahorroEmergencia.getText().toString().equals("") && !AhorroHipotecario.getText().toString().equals("")) {
+}else if(ahorroEmergencia.isChecked()){
+    tipo.setTipoAhorro("Ahorro emergencia");
+    
+} else if(AhorroHipotecario.isChecked()){
+    tipo.setTipoAhorro("Ahorro hipotecario");
+
+}
+
+        if (!nomAhorro.getText().toString().equals("") && !montoAhorro.getText().toString().equals("") && !cuentaAhorro.getText().toString().equals("") && !tipo.equals("") ) {
             try {
                 OutputStreamWriter createFileInformation = new OutputStreamWriter(getActivity().openFileOutput("_savings.txt", Activity.MODE_PRIVATE));
 
-                createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + ahorroObjetivo + "\n" + ahorroEmergencia.getText().toString() + "\n" + AhorroHipotecario.getText().toString());
+                createFileInformation.write(nomAhorro.getText().toString() + "\n" + montoAhorro.getText().toString() + "\n" + cuentaAhorro.getText().toString() + "\n" + tipo);
                 createFileInformation.flush();
                 createFileInformation.close();
                 Toast.makeText(getActivity(), "Registrado correctamente", Toast.LENGTH_SHORT).show();
@@ -87,6 +99,7 @@ public class AhorrosFragment extends Fragment {
 
         }
     }
+
 
 
     private boolean archivoExiste(String files[], String nameFile) {
