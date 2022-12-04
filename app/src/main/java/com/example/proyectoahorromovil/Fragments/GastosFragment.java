@@ -97,7 +97,7 @@ public class GastosFragment extends Fragment {
     public void guardarArchivo() {
         try {
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_bills.txt", Activity.MODE_PRIVATE));
-            saves.write(objeto.getNombreMovimiento() + "\n" + objeto.getTipoGasto() + "\n" + objeto.getFechaMovimiento() + "\n" + objeto.getMontoMovimiento() + "\n" + objeto.getLugarGasto());
+            saves.write(" Concepto: " + objeto.getNombreMovimiento() + "\n Tipo: " + objeto.getTipoGasto() + "\n Fecha: " + objeto.getFechaMovimiento() + "\n Monto: " + objeto.getMontoMovimiento() + "\n Lugar: " + objeto.getLugarGasto());
             saves.flush();
             saves.close();
         } catch (IOException ex) {

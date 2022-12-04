@@ -106,7 +106,7 @@ public class IngresosFragment extends Fragment {
     public void guardarArchivo() {
         try {
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_incomes.txt", Activity.MODE_PRIVATE));
-            saves.write(objeto.getNombreMovimiento() + "\n" + objeto.getTipoIngreso() + "\n" + objeto.getFechaMovimiento() + "\n" + objeto.getMontoMovimiento() + "\n" + objeto.getLugarIngreso());
+            saves.write(" Concepto: " + objeto.getNombreMovimiento() + "\n Tipo: " + objeto.getTipoIngreso() + "\n Fecha: " + objeto.getFechaMovimiento() + "\n Monto: " + objeto.getMontoMovimiento() + "\n Lugar: " + objeto.getLugarIngreso());
             saves.flush();
             saves.close();
         } catch (IOException ex) {
