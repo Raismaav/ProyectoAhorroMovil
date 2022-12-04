@@ -1,24 +1,19 @@
 package com.example.proyectoahorromovil.Modelo;
 
+
 public class Inversion {
-    String NombreInversionista,TipoInversion, NivelRiesgo, PlazoInversion;
-    int ObjetivoInversion,MontoInversion;
+    String NombreInversion,TipoInversion, NivelRiesgo, PlazoInversion, ObjetivoInversion;
+    int MontoInversion;
 
-    public Inversion(String nombreInversionista, String tipoInversion, String nivelRiesgo, String plazoInversion, int objetivoInversion, int montoInversion) {
-        this.NombreInversionista = nombreInversionista;
-        this.TipoInversion = tipoInversion;
-        this.NivelRiesgo = nivelRiesgo;
-        this.PlazoInversion = plazoInversion;
-        this.ObjetivoInversion = objetivoInversion;
-        this.MontoInversion = montoInversion;
+    public Inversion(){
     }
 
-    public String getNombreInversionista() {
-        return NombreInversionista;
+    public String getNombreInversion() {
+        return NombreInversion;
     }
 
-    public void setNombreInversionista(String nombreInversionista) {
-        NombreInversionista = nombreInversionista;
+    public void setNombreInversion(String nombreInversion) {
+        NombreInversion = nombreInversion;
     }
 
     public String getTipoInversion() {
@@ -45,11 +40,11 @@ public class Inversion {
         PlazoInversion = plazoInversion;
     }
 
-    public int getObjetivoInversion() {
+    public String getObjetivoInversion() {
         return ObjetivoInversion;
     }
 
-    public void setObjetivoInversion(int objetivoInversion) {
+    public void setObjetivoInversion(String objetivoInversion) {
         ObjetivoInversion = objetivoInversion;
     }
 
