@@ -38,6 +38,7 @@
             android:title="@string/title_otros">
             <menu>
                 <item
+                    android:id="@+id/nav_logros"
                     android:icon="@drawable/ic_10_trofeo"
                     android:title="@string/menu_logros" />
 

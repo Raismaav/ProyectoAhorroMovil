@@ -12,5 +12,6 @@
         android:id="@+id/idRecyclerAward"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/card_view_recycler"></androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/card_view_recycler">
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

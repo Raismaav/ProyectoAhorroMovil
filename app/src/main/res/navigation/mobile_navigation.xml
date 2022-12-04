@@ -40,10 +40,11 @@
         android:name="com.example.proyectoahorromovil.LoginActivity"
         android:label="@string/titulo_login"
         tools:layout="@layout/activity_login" />
+
     <fragment
-        android:id="@+id/logrosFragment"
+        android:id="@+id/nav_logros"
         android:name="com.example.proyectoahorromovil.Fragments.Awards.LogrosFragment"
-        android:label="fragment_logros"
+        android:label="@string/menu_logros"
         tools:layout="@layout/fragment_logros" />
 
 </navigation>
