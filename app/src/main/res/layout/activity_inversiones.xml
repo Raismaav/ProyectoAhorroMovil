@@ -191,7 +191,7 @@
         app:layout_constraintVertical_bias="0.864" />
 
     <Button
-        android:id="@+id/btn_registrar_inversion"
+        android:id="@+id/btn_registrar_ahorro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="registrarInversion"

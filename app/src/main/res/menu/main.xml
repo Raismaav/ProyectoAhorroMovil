@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/mi_add_pagos"
+        android:title="@string/menu_pagos" />
+
+    <item
+        android:id="@+id/mi_add_ahorros"
+        android:title="@string/menu_ahorros" />
+
+    <item
+        android:id="@+id/mi_add_inversiones"
+        android:title="@string/menu_inversiones" />
+
+    <item
+        android:id="@+id/mi_add_gastos"
+        android:title="@string/menu_gastos" />
+
+    <item
+        android:id="@+id/mi_add_ingresos"
+        android:title="@string/menu_ingresos" />
 </menu>

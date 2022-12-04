@@ -18,13 +18,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="AHORROS"
+            android:text="Ahorros"
             android:textAlignment="center"
             android:textSize="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idToolbarLogin" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edt_nombre_ahorro"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txv_titulo_ahorros" />
 
         <RadioGroup
-            android:id="@+id/grp_ahorro"
+            android:id="@+id/grp_ahorros"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -80,7 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/grp_ahorro" />
+            app:layout_constraintTop_toBottomOf="@+id/grp_ahorros" />
 
         <EditText
             android:id="@+id/edt_monto_ahorro"
@@ -110,14 +110,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edt_monto_ahorro" />
 
-        <include
-            android:id="@+id/idToolbarLogin"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <Button
-            android:id="@+id/btn_registrar_inversion"
+            android:id="@+id/btn_registrar_ahorro"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
@@ -130,7 +124,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_cuenta_ahorro" />
 
         <Button
-            android:id="@+id/btn_regresar_main"
+            android:id="@+id/btn_regresar_ahorro"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
@@ -139,7 +133,7 @@
             android:text="REGRESAR"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_registrar_inversion" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_registrar_ahorro" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -153,7 +147,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_regresar_main">
+            app:layout_constraintTop_toBottomOf="@+id/btn_regresar_ahorro">
 
             <ImageView
                 android:layout_width="64dp"
