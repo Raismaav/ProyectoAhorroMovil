@@ -29,7 +29,7 @@
             android:id="@+id/txv_bienvenida_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvenido a Ahorromóvil"
+            android:text="@string/txv_bienvenida_header"
             android:textSize="20dp"
             android:layout_margin="10dp"
             android:textColor="@color/white"/>
@@ -46,7 +46,7 @@
             android:id="@+id/txv_nombre_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rafael Isaí"
+            android:text="@string/txv_nombre_header"
             android:textSize="16dp"
             android:textColor="@color/white"/>
 
@@ -54,7 +54,7 @@
             android:id="@+id/txv_usuario_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Raismaav"
+            android:text="@string/txv_usuario_header"
             android:textSize="12dp"
             android:textColor="#B3FFFFFF"/>
 

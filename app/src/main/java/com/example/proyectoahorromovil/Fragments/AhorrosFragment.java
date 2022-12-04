@@ -38,6 +38,7 @@ public class AhorrosFragment extends Fragment {
     int anio, dia, mes;
     CalendarView calendarAhorro;
     Button RegistrarAhor, RegresarAhor;
+    private String usuario;
 private Ahorro tipo;
 
     public AhorrosFragment() {
@@ -47,6 +48,7 @@ private Ahorro tipo;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @Override
@@ -62,7 +64,6 @@ private Ahorro tipo;
         AhorroHipotecario = view.findViewById(R.id.rb_hipoteca_ahorro);
         calendarAhorro = view.findViewById(R.id.clv_fecha_ahorro);
         RegistrarAhor = view.findViewById(R.id.btn_registrar_ahorro);
-        RegresarAhor = view.findViewById(R.id.btn_regresar_ahorro);
 
         tipo = new Ahorro();
 

@@ -29,6 +29,7 @@ public class GastosFragment extends Fragment {
     EditText nomGasto,montoGasto, lugarGasto;
     RadioButton fijoGasto,variadoGasto, inesperadoGasto;
     public Gasto gastoTipo;
+    private String usuario;
     public GastosFragment() {
 
     }
@@ -36,6 +37,7 @@ public class GastosFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @Override

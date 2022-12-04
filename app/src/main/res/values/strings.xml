@@ -7,6 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Header -->
+    <string name="txv_bienvenida_header">Bienvenido a Ahorromóvil</string>
+    <string name="txv_nombre_header">Rafael Isaí</string>
+    <string name="txv_usuario_header">Raismaav</string>
+
     <!-- Menu -->
     <string name="title_movimientos">Movimientos</string>
     <string name="title_otros">Otros</string>

@@ -24,14 +24,15 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class PagosFragment extends Fragment {
-    EditText claveRastreo, emisor, receptor, cuentaBeneficiaria, montoPago;
-
+    private EditText claveRastreo, emisor, receptor, cuentaBeneficiaria, montoPago;
+    private String usuario;
 
     public PagosFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        usuario = getActivity().getIntent().getStringExtra("usuario");
     }
 
     @SuppressLint("MissingInflatedId")
