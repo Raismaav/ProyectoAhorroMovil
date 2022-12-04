@@ -87,7 +87,7 @@ public class PagosFragment extends Fragment {
     public void guardarArchivo() {
         try {
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_payments.txt", Activity.MODE_PRIVATE));
-            saves.write(objeto.getClaveRastreo() + "\n" + objeto.getFechaPago() + "\n" + objeto.getEmisor() + "\n" + objeto.getReceptor() + "\n" + objeto.getCuentaBeneficiaria() + "\n" + objeto.getMontoPago());
+            saves.write("  Clave de rastreo: " + objeto.getClaveRastreo() + "\n Fecha: " + objeto.getFechaPago() + "\n Emisor: " + objeto.getEmisor() + "\n Receptor: " + objeto.getReceptor() + "\n Cuenta beneficiaria: " + objeto.getCuentaBeneficiaria() + "\n Monto: " + objeto.getMontoPago());
             saves.flush();
             saves.close();
         } catch (IOException ex) {

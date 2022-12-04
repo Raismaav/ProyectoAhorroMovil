@@ -2,6 +2,7 @@ package com.example.proyectoahorromovil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.proyectoahorromovil.R;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class GastosActivity extends AppCompatActivity {
 
@@ -54,9 +56,27 @@ public class GastosActivity extends AppCompatActivity {
         return false;
     }
 
+    public void editarArchivo() {
+        String files[] = fileList();
+        if(archivoExiste(files, usuario + "_bills.txt")) {
+            try {
+                OutputStreamWriter editFile = new OutputStreamWriter(openFileOutput(usuario + "_bills.txt", Activity.MODE_PRIVATE));
+                editFile.write(contenido.getText().toString());
+                editFile.flush();
+                editFile.close();
+                Toast.makeText(this, "Los cambios fueron realizados correctamente.", Toast.LENGTH_SHORT).show();
+            } catch (IOException ex) {
+                Toast.makeText(this, "No se pudo sobrescribir el archivo.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "El archivo que desea editar no existe.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void regresar(View view) {
         Intent loadMain = new Intent(this, MainActivity.class);
         loadMain.putExtra("usuario", usuario);
+        editarArchivo();
         startActivity(loadMain);
     }
 }
