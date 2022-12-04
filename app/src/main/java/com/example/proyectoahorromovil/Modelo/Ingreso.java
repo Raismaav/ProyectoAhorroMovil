@@ -2,10 +2,11 @@ package com.example.proyectoahorromovil.Modelo;
 
 public class Ingreso extends Gasto{
 
-    public Ingreso(String tipo, String lugar, int resultado) {
-        super(tipo, lugar, resultado);
+    public Ingreso() {
+        super();
         this.Lugar="";
-        this.Resultado= 0;
+        this.Nombre="";
+        this.Monto= 0;
         this.Tipo="";
     }
 
