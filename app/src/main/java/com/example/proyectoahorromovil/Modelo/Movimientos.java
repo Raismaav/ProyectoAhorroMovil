@@ -1,27 +1,18 @@
 package com.example.proyectoahorromovil.Modelo;
 
-import java.io.Serializable;
+public class Movimientos {
 
-public class Movimientos implements Serializable {
+    String nombreMovimiento, fechaMovimiento;
+    int montoMovimiento;
 
-    String NombreMovimiento, TipoMovimiento, FechaMovimiento;
-    int MontoMovimiento;
+    public Movimientos() { /* Constructor vacío */ }
 
-    public Movimientos(String nombreMovimiento, String tipoMovimiento, String fechaMovimiento, int montoMovimiento) {
-       this.NombreMovimiento = nombreMovimiento;
-       this.TipoMovimiento = tipoMovimiento;
-       this.FechaMovimiento = fechaMovimiento;
-       this.MontoMovimiento = montoMovimiento;
-    }
-
-    public String getNombreMovimiento() { return NombreMovimiento; }
-    public void setNombreMovimiento(String nombreMovimiento) { NombreMovimiento = nombreMovimiento; }
-    public String getTipoMovimiento() { return TipoMovimiento; }
-    public void setTipoMovimiento(String tipoMovimiento) { TipoMovimiento = tipoMovimiento; }
-    public String getFechaMovimiento() { return FechaMovimiento; }
-    public void setFechaMovimiento(String fechaMovimiento) { FechaMovimiento = fechaMovimiento; }
-    public int getMontoMovimiento() { return MontoMovimiento; }
-    public void setMontoMovimiento(int montoMovimiento) { MontoMovimiento = montoMovimiento; }
+    public String getNombreMovimiento() { return nombreMovimiento; }
+    public void setNombreMovimiento(String nombreMovimiento) { this.nombreMovimiento = nombreMovimiento; }
+    public String getFechaMovimiento() { return fechaMovimiento; }
+    public void setFechaMovimiento(String fechaMovimiento) { this.fechaMovimiento = fechaMovimiento; }
+    public int getMontoMovimiento() { return montoMovimiento; }
+    public void setMontoMovimiento(int montoMovimiento) { this.montoMovimiento = montoMovimiento; }
 }
 
 
