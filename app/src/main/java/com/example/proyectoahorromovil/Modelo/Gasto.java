@@ -1,13 +1,26 @@
 package com.example.proyectoahorromovil.Modelo;
 
 public class Gasto {
-    protected String Tipo, Lugar;
-    protected int Resultado;
+    protected String Tipo, Lugar, Nombre;
+    protected int Monto;
 
-    public Gasto(String tipo, String lugar, int resultado) {
-        this.Tipo = tipo;
-        this.Lugar = lugar;
-        this.Resultado = resultado;
+    public Gasto(){
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public int getMonto() {
+        return Monto;
+    }
+
+    public void setMonto(int monto) {
+        Monto = monto;
     }
 
     public String getTipo() {
@@ -26,11 +39,5 @@ public class Gasto {
         Lugar = lugar;
     }
 
-    public int getResultado() {
-        return Resultado;
-    }
 
-    public void setResultado(int resultado) {
-        Resultado = resultado;
-    }
 }
