@@ -19,7 +19,6 @@ import java.io.OutputStreamWriter;
 
 public class IngresosActivity extends AppCompatActivity {
     private EditText contenido;
-    private Button regresar;
     private String usuario;
 
     @Override
@@ -28,7 +27,6 @@ public class IngresosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ingresos);
         usuario = getIntent().getStringExtra("usuario");
         contenido = findViewById(R.id.txtMostrarIngresos);
-        regresar = findViewById(R.id.btnRegresarIngresos);
         String files[] = fileList();
         if(archivoExiste(files, usuario + "_incomes.txt")) {
             try {

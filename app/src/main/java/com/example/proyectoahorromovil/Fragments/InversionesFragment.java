@@ -70,20 +70,20 @@ public class InversionesFragment extends Fragment {
             String objetivoI = objetivoInversion.getText().toString();
             String tipoI = "";
             if (tipoAccion.isChecked()) {
-                tipoI = "Acción ";
-            } else if (tipoBonos.isChecked()) {
-                tipoI = "Bonos ";
-            } else if (tipoValor.isChecked()) {
-                tipoI = "Mercado de valores ";
+                tipoI += "Acción, ";
+            } if (tipoBonos.isChecked()) {
+                tipoI += "Bonos, ";
+            } if (tipoValor.isChecked()) {
+                tipoI += "Mercado de valores, ";
             }
-            String riesgoI = registrarInversion.getText().toString();
+            String riesgoI = reisgoInversion.getSelectedItem().toString();
             String plazoI = "";
             if (plazoCorto.isChecked()) {
-                plazoI += "Corto";
-            } if (plazoMedio.isChecked()) {
-                plazoI += "Mediano";
-            } if (plazoLargo.isChecked()) {
-                plazoI += "Largo";
+                plazoI = "Corto";
+            } else if (plazoMedio.isChecked()) {
+                plazoI = "Mediano";
+            } else if (plazoLargo.isChecked()) {
+                plazoI = "Largo";
             }
             String montoI = montoInversion.getText().toString();
             objeto.setNombreInversion(nombreI);
