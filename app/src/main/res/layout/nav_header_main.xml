@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txv_bienvenida_header"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_margin="10dp"
             android:textColor="@color/white"/>
 
@@ -55,8 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txv_usuario_header"
-            android:textSize="12dp"
-            android:textColor="#B3FFFFFF"/>
+            android:textColor="#B3FFFFFF"
+            android:textSize="12dp" />
 
     </LinearLayout>
 </LinearLayout>
