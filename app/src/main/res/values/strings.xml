@@ -8,9 +8,9 @@
     <string name="action_settings">Settings</string>
 
     <!-- Header -->
-    <string name="txv_bienvenida_header">Bienvenido a Ahorromóvil</string>
-    <string name="txv_nombre_header">Rafael Isaí</string>
-    <string name="txv_usuario_header">Raismaav</string>
+    <string name="txv_bienvenida_header">AHORROMÓVIL</string>
+    <string name="txv_nombre_header">¡Disfruta la experiencia!</string>
+    <string name="txv_usuario_header">Made by Laisha Riestra, Rafael Magaña and Sofia Rojas</string>
 
     <!-- Menu -->
     <string name="title_movimientos">Movimientos</string>
