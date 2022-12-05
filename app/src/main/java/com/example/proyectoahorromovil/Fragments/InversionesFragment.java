@@ -96,7 +96,7 @@ public class InversionesFragment extends Fragment {
             objeto.setMontoInversion(Integer.parseInt(montoI));
             guardarArchivo();
             limpiar();
-            Toast.makeText(getActivity(), "La inversión fue registrada con exito..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "La inversión fue registrada con exito.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }
