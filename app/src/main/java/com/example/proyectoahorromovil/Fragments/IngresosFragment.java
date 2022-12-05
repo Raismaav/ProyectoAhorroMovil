@@ -23,7 +23,9 @@ import com.example.proyectoahorromovil.MainActivity;
 import com.example.proyectoahorromovil.Modelo.Ingreso;
 import com.example.proyectoahorromovil.R;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class IngresosFragment extends Fragment {
@@ -105,12 +107,33 @@ public class IngresosFragment extends Fragment {
 
     public void guardarArchivo() {
         try {
+            String anterior = obtenerAnteriores(usuario + "_incomes.txt");
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_incomes.txt", Activity.MODE_PRIVATE));
-            saves.write("  Concepto: " + objeto.getNombreMovimiento() + "\n Tipo: " + objeto.getTipoIngreso() + "\n Fecha: " + objeto.getFechaMovimiento() + "\n Monto: " + objeto.getMontoMovimiento() + "\n Lugar: " + objeto.getLugarIngreso());
+            saves.write(anterior + " Concepto: " + objeto.getNombreMovimiento() + "\n Tipo: " + objeto.getTipoIngreso() + "\n Fecha: " + objeto.getFechaMovimiento() + "\n Monto: " + objeto.getMontoMovimiento() + "\n Lugar: " + objeto.getLugarIngreso() + "\n\n");
             saves.flush();
             saves.close();
         } catch (IOException ex) {
             Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String obtenerAnteriores(String nombreArchivo) {
+        try {
+            InputStreamReader archivoInterno = new InputStreamReader(getActivity().openFileInput(nombreArchivo));
+            BufferedReader leerArchivo = new BufferedReader(archivoInterno);
+            String linea = leerArchivo.readLine();
+            String textoLeido = "";
+
+            while (linea != null) {
+                textoLeido += linea + "\n";
+                linea = leerArchivo.readLine();
+            }
+            leerArchivo.close();
+            archivoInterno.close();
+            return textoLeido;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
         }
     }
 

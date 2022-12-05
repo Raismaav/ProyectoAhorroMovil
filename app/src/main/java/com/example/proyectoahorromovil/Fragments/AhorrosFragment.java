@@ -97,12 +97,33 @@ public class AhorrosFragment extends Fragment {
 
     public void guardarArchivo() {
         try {
+            String anterior = obtenerAnteriores(usuario + "_savings.txt");
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_savings.txt", Activity.MODE_PRIVATE));
-            saves.write("  Nombre del beneficiario: " + objeto.getNombreBeneficiario() + "\n Tipo: " + objeto.getTipoAhorro() + "\n Fecha: " + objeto.getFechaAhorro() + "\n Monto: " + objeto.getMontoAhorro() + "\n Cuenta destino: " + objeto.getCuentaAhorro());
+            saves.write(anterior + " Nombre del beneficiario: " + objeto.getNombreBeneficiario() + "\n Tipo: " + objeto.getTipoAhorro() + "\n Fecha: " + objeto.getFechaAhorro() + "\n Monto: " + objeto.getMontoAhorro() + "\n Cuenta destino: " + objeto.getCuentaAhorro() + "\n\n");
             saves.flush();
             saves.close();
         } catch (IOException ex) {
             Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String obtenerAnteriores(String nombreArchivo) {
+        try {
+            InputStreamReader archivoInterno = new InputStreamReader(getActivity().openFileInput(nombreArchivo));
+            BufferedReader leerArchivo = new BufferedReader(archivoInterno);
+            String linea = leerArchivo.readLine();
+            String textoLeido = "";
+
+            while (linea != null) {
+                textoLeido += linea + "\n";
+                linea = leerArchivo.readLine();
+            }
+            leerArchivo.close();
+            archivoInterno.close();
+            return textoLeido;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
         }
     }
 

@@ -13,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.proyectoahorromovil.Modelo.Pago;
 import com.example.proyectoahorromovil.R;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class PagosFragment extends Fragment {
@@ -84,10 +87,11 @@ public class PagosFragment extends Fragment {
         }
     }
 
-    public void guardarArchivo() {
+    private void guardarArchivo() {
         try {
+            String anterior = obtenerAnteriores(usuario + "_payments.txt");
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_payments.txt", Activity.MODE_PRIVATE));
-            saves.write("  Clave de rastreo: " + objeto.getClaveRastreo() + "\n Fecha: " + objeto.getFechaPago() + "\n Emisor: " + objeto.getEmisor() + "\n Receptor: " + objeto.getReceptor() + "\n Cuenta beneficiaria: " + objeto.getCuentaBeneficiaria() + "\n Monto: " + objeto.getMontoPago());
+            saves.write( anterior + " Clave de rastreo: " + objeto.getClaveRastreo() + "\n Fecha: " + objeto.getFechaPago() + "\n Emisor: " + objeto.getEmisor() + "\n Receptor: " + objeto.getReceptor() + "\n Cuenta beneficiaria: " + objeto.getCuentaBeneficiaria() + "\n Monto: " + objeto.getMontoPago() + "\n\n");
             saves.flush();
             saves.close();
         } catch (IOException ex) {
@@ -95,7 +99,27 @@ public class PagosFragment extends Fragment {
         }
     }
 
-    public void limpiar() {
+    private String obtenerAnteriores(String nombreArchivo) {
+        try {
+            InputStreamReader archivoInterno = new InputStreamReader(getActivity().openFileInput(nombreArchivo));
+            BufferedReader leerArchivo = new BufferedReader(archivoInterno);
+            String linea = leerArchivo.readLine();
+            String textoLeido = "";
+
+            while (linea != null) {
+                textoLeido += linea + "\n";
+                linea = leerArchivo.readLine();
+            }
+            leerArchivo.close();
+            archivoInterno.close();
+            return textoLeido;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    private void limpiar() {
         clave.setText("");
         monto.setText("");
         emisor.setText("");

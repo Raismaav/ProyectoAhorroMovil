@@ -18,7 +18,9 @@ import androidx.fragment.app.Fragment;
 import com.example.proyectoahorromovil.Modelo.Inversion;
 import com.example.proyectoahorromovil.R;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class InversionesFragment extends Fragment {
@@ -102,14 +104,36 @@ public class InversionesFragment extends Fragment {
 
     public void guardarArchivo() {
         try {
+            String anterior = obtenerAnteriores(usuario + "_investments.txt");
             OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_investments.txt", Activity.MODE_PRIVATE));
-            saves.write("Nombre: " + objeto.getNombreInversion() + "\nObjetivo: " + objeto.getObjetivoInversion() + "\nTipo: " + objeto.getTipoInversion() + "\nRiesgo: " + objeto.getNivelRiesgo() + "\nPlazo: " + objeto.getPlazoInversion() + "\nMonto: " + objeto.getMontoInversion());
+            saves.write(anterior + " Nombre: " + objeto.getNombreInversion() + "\n Objetivo: " + objeto.getObjetivoInversion() + "\n Tipo: " + objeto.getTipoInversion() + "\n Riesgo: " + objeto.getNivelRiesgo() + "\n Plazo: " + objeto.getPlazoInversion() + "\n Monto: " + objeto.getMontoInversion() + "\n\n");
             saves.flush();
             saves.close();
         } catch (IOException ex) {
             Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private String obtenerAnteriores(String nombreArchivo) {
+        try {
+            InputStreamReader archivoInterno = new InputStreamReader(getActivity().openFileInput(nombreArchivo));
+            BufferedReader leerArchivo = new BufferedReader(archivoInterno);
+            String linea = leerArchivo.readLine();
+            String textoLeido = "";
+
+            while (linea != null) {
+                textoLeido += linea + "\n";
+                linea = leerArchivo.readLine();
+            }
+            leerArchivo.close();
+            archivoInterno.close();
+            return textoLeido;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
     public void limpiar() {
         nombreInversion.setText("");
         objetivoInversion.setText("");
