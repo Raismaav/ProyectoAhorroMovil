@@ -71,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_objetivo_inversion" />
 
         <CheckBox
-            android:id="@+id/chb_corto"
+            android:id="@+id/chb_accion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -83,7 +83,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txv_tipo_inversión" />
 
         <CheckBox
-            android:id="@+id/chb_mediano"
+            android:id="@+id/chb_bono"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -92,10 +92,10 @@
             android:text="Inversión de bonos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chb_corto" />
+            app:layout_constraintTop_toBottomOf="@+id/chb_accion" />
 
         <CheckBox
-            android:id="@+id/chb_largo"
+            android:id="@+id/chb_valor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -104,7 +104,7 @@
             android:text="Inversión del mercado de valores"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chb_mediano" />
+            app:layout_constraintTop_toBottomOf="@+id/chb_bono" />
 
         <TextView
             android:id="@+id/txv_riesgo_inversiones"
@@ -119,10 +119,10 @@
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chb_largo" />
+            app:layout_constraintTop_toBottomOf="@+id/chb_valor" />
 
         <Spinner
-            android:id="@+id/spRiesgos"
+            android:id="@+id/spn_riesgo"
             android:layout_width="0dp"
             android:layout_height="51dp"
             android:layout_marginStart="16dp"
@@ -147,7 +147,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spRiesgos" />
+            app:layout_constraintTop_toBottomOf="@+id/spn_riesgo" />
 
         <RadioGroup
             android:id="@+id/grp_inversiones"
@@ -161,19 +161,19 @@
             app:layout_constraintTop_toBottomOf="@+id/txv_plazo_inversiones">
 
             <RadioButton
-                android:id="@+id/rb_accion"
+                android:id="@+id/rb_corto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Corto" />
 
             <RadioButton
-                android:id="@+id/rb_bonos"
+                android:id="@+id/rb_mediano"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mediano" />
 
             <RadioButton
-                android:id="@+id/rb_valores"
+                android:id="@+id/rb_largo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Largo" />
@@ -189,7 +189,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Escribe el monto de la inversión"
-            android:inputType="textPersonName"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

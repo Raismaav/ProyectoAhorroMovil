@@ -1,24 +1,20 @@
 package com.example.proyectoahorromovil.Fragments;
 
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.proyectoahorromovil.MainActivity;
-import com.example.proyectoahorromovil.Modelo.Ingreso;
 import com.example.proyectoahorromovil.Modelo.Inversion;
 import com.example.proyectoahorromovil.R;
 
@@ -26,10 +22,13 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class InversionesFragment extends Fragment {
-    EditText nomInversion, objetivoInversion, montoInversion;
-    RadioButton accionInversion, bonos, mercadoValores;
-    CheckBox BajoRiesgo, medioRiesgo, altoRiesgo, cortoPlazo, medianoPlazo, largoPlazo;
-    Inversion inversionTipo, inversionPlazo, inversionRiesgo;
+    private View view;
+    private EditText nombreInversion, objetivoInversion, montoInversion;
+    private RadioButton plazoCorto, plazoMedio, plazoLargo;
+    private CheckBox tipoAccion, tipoBonos, tipoValor;
+    private Spinner reisgoInversion;
+    private Button registrarInversion;
+    private Inversion objeto;
     private String usuario;
 
     public InversionesFragment() {}
@@ -41,99 +40,86 @@ public class InversionesFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_inversiones, container, false);
-        nomInversion = view.findViewById(R.id.edt_nombre_inversion);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_inversiones, container, false);
+        nombreInversion = view.findViewById(R.id.edt_nombre_inversion);
         objetivoInversion = view.findViewById(R.id.edt_objetivo_inversion);
+        tipoAccion = view.findViewById(R.id.chb_accion);
+        tipoBonos = view.findViewById(R.id.chb_bono);
+        tipoValor = view.findViewById(R.id.chb_valor);
+        reisgoInversion = view.findViewById(R.id.spn_riesgo);
+        plazoCorto = view.findViewById(R.id.rb_corto);
+        plazoMedio = view.findViewById(R.id.rb_mediano);
+        plazoLargo = view.findViewById(R.id.rb_largo);
         montoInversion = view.findViewById(R.id.edt_monto_inversion);
-        accionInversion = view.findViewById(R.id.rb_accion);
-        bonos = view.findViewById(R.id.rb_bonos);
-        mercadoValores = view.findViewById(R.id.rb_valores);
-        cortoPlazo = view.findViewById(R.id.chb_corto);
-        medianoPlazo = view.findViewById(R.id.chb_mediano);
-        largoPlazo = view.findViewById(R.id.chb_largo);
-        
-        inversionRiesgo = new Inversion();
-        inversionPlazo = new Inversion();
-        inversionTipo = new Inversion();
+        registrarInversion = view.findViewById(R.id.btn_registrar_inversion);
+        objeto = new Inversion();
 
-        return inflater.inflate(R.layout.fragment_inversiones, container, false);
-    }
-
-    public void RegistrarInversion(View view) {
-        if(accionInversion.isChecked()){
-            inversionTipo.setTipoInversion(" Inversion accion");
-
-        }else if(bonos.isChecked()){
-            inversionTipo.setTipoInversion("Inversion bonos");
-
-        } else if(mercadoValores.isChecked()){
-            inversionTipo.setTipoInversion("Inversion mercado de valores");
-        }
-
-        if(BajoRiesgo.isChecked()){
-            inversionRiesgo.setNivelRiesgo("Bajo riesgo");
-            
-        }else if(medioRiesgo.isChecked()){
-            inversionRiesgo.setNivelRiesgo("Medio riesgo");
-        
-        }else if(altoRiesgo.isChecked()){
-            inversionRiesgo.setNivelRiesgo("Alto riesgo");
-        }
-
-        if(cortoPlazo.isChecked()){
-            inversionPlazo.setNivelRiesgo("Corto plazo");
-
-        }else if(medianoPlazo.isChecked()){
-            inversionPlazo.setNivelRiesgo("Mediano plazo");
-
-        }else if(largoPlazo.isChecked()){
-            inversionPlazo.setNivelRiesgo("Largo plazo");
-        }
-
-        if (!nomInversion.getText().toString().equals("") && !montoInversion.getText().toString().equals("") && !objetivoInversion.getText().toString().equals("") && !inversionTipo.equals("")&& !inversionRiesgo.equals("")&& !inversionPlazo.equals("") ) {
-            try {
-                OutputStreamWriter createFileInformationUser = new OutputStreamWriter(getActivity().openFileOutput("_investments.txt", Activity.MODE_PRIVATE));
-
-                createFileInformationUser.write(nomInversion.getText().toString() + "\n" + montoInversion.getText().toString() + "\n" + objetivoInversion.getText().toString() + "\n" + inversionTipo+ "\n" + inversionPlazo+ "\n" + inversionRiesgo);
-                createFileInformationUser.flush();
-                createFileInformationUser.close();
-                Toast.makeText(getActivity(), "Inversion registrada correctamente", Toast.LENGTH_SHORT).show();
-                Intent registroInversion = new Intent(getActivity(), MainActivity.class);
-                startActivity(registroInversion);
-            } catch (IOException e) {
-                Toast.makeText(getActivity(), "No se pudieron guardar los datos", Toast.LENGTH_SHORT).show();
+        registrarInversion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registroInversion();
             }
+        });
+        return view;
+    }
 
+    public void registroInversion() {
+        if(!nombreInversion.getText().toString().equals("") && !objetivoInversion.getText().toString().equals("") && !montoInversion.getText().toString().equals("" ) && reisgoInversion.getSelectedItemPosition() != 0 && (tipoAccion.isChecked() || tipoBonos.isChecked() || tipoValor.isChecked()) && (plazoCorto.isChecked() || plazoMedio.isChecked() || plazoLargo.isChecked())) {
+            String nombreI = nombreInversion.getText().toString();
+            String objetivoI = objetivoInversion.getText().toString();
+            String tipoI = "";
+            if (tipoAccion.isChecked()) {
+                tipoI += "Acción, ";
+            } if (tipoBonos.isChecked()) {
+                tipoI += "Bonos, ";
+            } if (tipoValor.isChecked()) {
+                tipoI += "Mercado de valores, ";
+            }
+            String riesgoI = reisgoInversion.getSelectedItem().toString();
+            String plazoI = "";
+            if (plazoCorto.isChecked()) {
+                plazoI = "Corto";
+            } else if (plazoMedio.isChecked()) {
+                plazoI = "Mediano";
+            } else if (plazoLargo.isChecked()) {
+                plazoI = "Largo";
+            }
+            String montoI = montoInversion.getText().toString();
+            objeto.setNombreInversion(nombreI);
+            objeto.setObjetivoInversion(objetivoI);
+            objeto.setTipoInversion(tipoI);
+            objeto.setNivelRiesgo(riesgoI);
+            objeto.setPlazoInversion(plazoI);
+            objeto.setMontoInversion(Integer.parseInt(montoI));
+            guardarArchivo();
+            limpiar();
+            Toast.makeText(getActivity(), "La inversión fue registrada con exito..", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "Revise los campos, alguno esta vacío.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private boolean archivoExiste(String files[], String nameFile) {
-        for (int i = 0; i < files.length; i++)
-            if (nameFile.equals(files[i]))
-                return true;
-        return false;
+    public void guardarArchivo() {
+        try {
+            OutputStreamWriter saves = new OutputStreamWriter(getActivity().openFileOutput(usuario + "_investments.txt", Activity.MODE_PRIVATE));
+            saves.write("Nombre: " + objeto.getNombreInversion() + "\nObjetivo: " + objeto.getObjetivoInversion() + "\nTipo: " + objeto.getTipoInversion() + "\nRiesgo: " + objeto.getNivelRiesgo() + "\nPlazo: " + objeto.getPlazoInversion() + "\nMonto: " + objeto.getMontoInversion());
+            saves.flush();
+            saves.close();
+        } catch (IOException ex) {
+            Toast.makeText(getActivity(), "No se pudo guardar la información en el archivo.", Toast.LENGTH_SHORT).show();
+        }
     }
-
-
-    public void guardardatos(Inversion inversion) {
-        SharedPreferences preferences = getActivity().getSharedPreferences("inversion.dat", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Nombre de inversion", inversion.getNombreInversion());
-        editor.putInt("Monto de inversion", inversion.getMontoInversion());
-        editor.putString("Objetivo de inversion", inversion.getObjetivoInversion());
-        editor.putString("Tipo de inversion", inversion.getTipoInversion());
-        editor.putString("Riesgo de inversion", inversion.getNivelRiesgo());
-        editor.putString("Plazo de inversion", inversion.getPlazoInversion());
-        editor.apply();
+    public void limpiar() {
+        nombreInversion.setText("");
+        objetivoInversion.setText("");
+        montoInversion.setText("");
+        tipoAccion.setChecked(false);
+        tipoBonos.setChecked(false);
+        tipoValor.setChecked(false);
+        plazoCorto.setChecked(false);
+        plazoMedio.setChecked(false);
+        plazoLargo.setChecked(false);
+        reisgoInversion.setSelection(0);
     }
-
-    public void regresarPrincipal(View view) {
-        Intent regresarMain = new Intent(getActivity(), MainActivity.class);
-        startActivity(regresarMain);
-
-    }
-
 }
